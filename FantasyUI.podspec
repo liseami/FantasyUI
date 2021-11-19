@@ -89,8 +89,8 @@ Pod::Spec.new do |s|
   #
 
 
-  s.source = { :git => 'https://github.com/liseami/FantasyUI.git', :tag => "#{s.version}" }
-
+  s.source = { :git => 'https://github.com/liseami/FantasyUI.git'}
+# s.source = { :git => 'https://github.com/liseami/FantasyUI.git', :tag => "#{s.version}" }
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
   #  CocoaPods is smart about how it includes source code. For source files
