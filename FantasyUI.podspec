@@ -6,7 +6,7 @@
 #  To see working Podspecs in the CocoaPods repo see https://github.com/CocoaPods/Specs/
 #
 
-Pod::Spec.new do |spec|
+Pod::Spec.new do |s|
 
   # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -15,22 +15,24 @@ Pod::Spec.new do |spec|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  spec.name         = "FantasyUI"
-  spec.version      = "0.0.1"
-  spec.summary      = "FantasyUI 金诚所至，金石为开."
-  swift_version     = "5.0"
+  s.name         = "FantasyUI"
+  s.version      = "0.0.1"
+  s.summary      = "FantasyUI 金诚所至，金石为开.FantasyUI 金诚所至，金石为开.FantasyUI 金诚所至，金石为开.FantasyUI 金诚所至，金石为开.FantasyUI 金诚所至，金石为开."
+
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
   #   * Try to keep it short, snappy and to the point.
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
-  spec.description  = <<-DESC
+  s.description  = <<-DESC
   "金诚所至，金石为开。"
                    DESC
 
-  spec.homepage     = "https://github.com/liseami/FantasyUI"
-  # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
+  s.homepage     = "https://github.com/liseami/FantasyUI.git"
+ 
+  s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 
 
   # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -40,7 +42,7 @@ Pod::Spec.new do |spec|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  spec.license      = { :type => "MIT", :file => "LICENSE" }
+  s.license      = { :type => "MIT", :file => "LICENSE" }
   # spec.license      = { :type => "MIT", :file => "FILE_LICENSE" }
 
 
@@ -54,10 +56,10 @@ Pod::Spec.new do |spec|
   #  profile URL.
   #
 
-  spec.author             = { "liseami" => "51239614+liseami@users.noreply.github.com" }
+  s.author             = { "liseami" => "liseami@qq.com" }
   # Or just: spec.author    = "liseami"
   # spec.authors            = { "liseami" => "51239614+liseami@users.noreply.github.com" }
-  # spec.social_media_url   = "https://twitter.com/liseami"
+  s.social_media_url   = "https://twitter.com/liseami"
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -66,13 +68,18 @@ Pod::Spec.new do |spec|
   #
 
   # spec.platform     = :ios
-  # spec.platform     = :ios, "5.0"
+  s.platform     = :ios, "14.1"
+
 
   #  When using multiple platforms
-  spec.ios.deployment_target = "14.1"
+  s.ios.deployment_target = "14.1"
+  s.swift_version = '5.3'
   # spec.osx.deployment_target = "10.7"
   # spec.watchos.deployment_target = "2.0"
   # spec.tvos.deployment_target = "9.0"
+  s.requires_arc = true
+  s.static_framework = true
+
 
 
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -81,8 +88,11 @@ Pod::Spec.new do |spec|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "https://github.com/liseami/FantasyUI.git", :tag => "#{spec.version}" }
 
+  s.source           = {
+    :git => 'https://github.com/liseami/FantasyUI.git',
+    :tag => s.version
+  }
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -92,8 +102,8 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "FantasyUI", "FantasyUI/**/*.{h,m}"
-  spec.exclude_files = "FantasyUI/Exclude"
+  s.source_files  = "FantasyUI", "FantasyUI/**/*.{h,m}"
+  s.exclude_files = "FantasyUI/Exclude"
 
   # spec.public_header_files = "Classes/**/*.h"
 
