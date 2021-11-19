@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "FantasyUI"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "FantasyUI 金诚所至，金石为开.FantasyUI 金诚所至，金石为开.FantasyUI 金诚所至，金石为开.FantasyUI 金诚所至，金石为开.FantasyUI 金诚所至，金石为开."
 
 
@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
   "金诚所至，金石为开。"
                    DESC
 
-  s.homepage     = "https://github.com/liseami/FantasyUI.git"
+  s.homepage     = "https://github.com/liseami/FantasyUI"
  
   s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
@@ -68,7 +68,7 @@ Pod::Spec.new do |s|
   #
 
   # spec.platform     = :ios
-  s.platform     = :ios, "14.1"
+  # s.platform     = :ios, "14.1"
 
 
   #  When using multiple platforms
@@ -89,10 +89,7 @@ Pod::Spec.new do |s|
   #
 
 
-  s.source           = {
-    :git => 'https://github.com/liseami/FantasyUI.git',
-    :tag => s.version
-  }
+  s.source = { :git => 'https://github.com/liseami/FantasyUI.git', :tag => "#{s.version}" }
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
