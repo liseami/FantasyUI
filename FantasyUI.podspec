@@ -89,7 +89,12 @@ Pod::Spec.new do |s|
   #
 
 
-  s.source = { :git => 'https://github.com/liseami/FantasyUI.git'}
+  # s.source = { :git => 'https://github.com/liseami/FantasyUI.git'}
+   s.source           = {
+    :git => 'https://github.com/liseami/FantasyUI.git',
+    :tag => s.version.to_s,
+    :submodules => true
+  }
 # s.source = { :git => 'https://github.com/liseami/FantasyUI.git', :tag => "#{s.version}" }
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
