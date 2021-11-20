@@ -4,34 +4,22 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>EXPLAM.xcscheme_^#shared#^_</key>
+		<key>FantasyUI.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
-		</dict>
-		<key>FantasyUI.xcscheme_^#shared#^_</key>
-		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>FantasyUIExample.xcscheme_^#shared#^_</key>
+		<key>Pods-FantasyUIExample.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict>
-		<key>5A1D50152747DF9600A2CCB9</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>5A1D501F2747DF9600A2CCB9</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-	</dict>
+	<dict/>
 </dict>
 </plist>

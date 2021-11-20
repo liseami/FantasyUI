@@ -11,11 +11,12 @@
 		5A1D50212747DF9600A2CCB9 /* FantasyUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A1D50162747DF9600A2CCB9 /* FantasyUI.framework */; };
 		5A1D50262747DF9600A2CCB9 /* FantasyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1D50252747DF9600A2CCB9 /* FantasyUITests.swift */; };
 		5A1D50272747DF9600A2CCB9 /* FantasyUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A1D50192747DF9600A2CCB9 /* FantasyUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5A1D50372747DFE900A2CCB9 /* FantasyUIExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1D50362747DFE900A2CCB9 /* FantasyUIExampleApp.swift */; };
-		5A1D50392747DFE900A2CCB9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1D50382747DFE900A2CCB9 /* ContentView.swift */; };
-		5A1D503B2747DFE900A2CCB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A1D503A2747DFE900A2CCB9 /* Assets.xcassets */; };
-		5A1D503E2747DFE900A2CCB9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A1D503D2747DFE900A2CCB9 /* Preview Assets.xcassets */; };
-		5A1D50432747E05F00A2CCB9 /* FantasyUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1D50422747E05F00A2CCB9 /* FantasyUI.swift */; };
+		5A1D50432747E05F00A2CCB9 /* NavigationTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1D50422747E05F00A2CCB9 /* NavigationTools.swift */; };
+		5AF0B637274893570067C843 /* PF_Sheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF0B636274893570067C843 /* PF_Sheet.swift */; };
+		5AF0B639274893850067C843 /* PF_OffsetScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF0B638274893850067C843 /* PF_OffsetScrollView.swift */; };
+		5AF0B63B2748962F0067C843 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF0B63A2748962F0067C843 /* Tools.swift */; };
+		5AF0B63D274896660067C843 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF0B63C274896660067C843 /* ViewModifiers.swift */; };
+		5AF0B63F274897590067C843 /* CommonValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF0B63E274897590067C843 /* CommonValues.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,12 +35,12 @@
 		5A1D501A2747DF9600A2CCB9 /* FantasyUI.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = FantasyUI.docc; sourceTree = "<group>"; };
 		5A1D50202747DF9600A2CCB9 /* FantasyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FantasyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A1D50252747DF9600A2CCB9 /* FantasyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FantasyUITests.swift; sourceTree = "<group>"; };
-		5A1D50342747DFE900A2CCB9 /* FantasyUIExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FantasyUIExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		5A1D50362747DFE900A2CCB9 /* FantasyUIExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FantasyUIExampleApp.swift; sourceTree = "<group>"; };
-		5A1D50382747DFE900A2CCB9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		5A1D503A2747DFE900A2CCB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		5A1D503D2747DFE900A2CCB9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		5A1D50422747E05F00A2CCB9 /* FantasyUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FantasyUI.swift; sourceTree = "<group>"; };
+		5A1D50422747E05F00A2CCB9 /* NavigationTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTools.swift; sourceTree = "<group>"; };
+		5AF0B636274893570067C843 /* PF_Sheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PF_Sheet.swift; sourceTree = "<group>"; };
+		5AF0B638274893850067C843 /* PF_OffsetScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PF_OffsetScrollView.swift; sourceTree = "<group>"; };
+		5AF0B63A2748962F0067C843 /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
+		5AF0B63C274896660067C843 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
+		5AF0B63E274897590067C843 /* CommonValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonValues.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +59,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5A1D50312747DFE900A2CCB9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -73,7 +67,6 @@
 			children = (
 				5A1D50182747DF9600A2CCB9 /* FantasyUI */,
 				5A1D50242747DF9600A2CCB9 /* FantasyUITests */,
-				5A1D50352747DFE900A2CCB9 /* FantasyUIExample */,
 				5A1D50172747DF9600A2CCB9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -83,7 +76,6 @@
 			children = (
 				5A1D50162747DF9600A2CCB9 /* FantasyUI.framework */,
 				5A1D50202747DF9600A2CCB9 /* FantasyUITests.xctest */,
-				5A1D50342747DFE900A2CCB9 /* FantasyUIExample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -93,7 +85,12 @@
 			children = (
 				5A1D50192747DF9600A2CCB9 /* FantasyUI.h */,
 				5A1D501A2747DF9600A2CCB9 /* FantasyUI.docc */,
-				5A1D50422747E05F00A2CCB9 /* FantasyUI.swift */,
+				5A1D50422747E05F00A2CCB9 /* NavigationTools.swift */,
+				5AF0B636274893570067C843 /* PF_Sheet.swift */,
+				5AF0B638274893850067C843 /* PF_OffsetScrollView.swift */,
+				5AF0B63A2748962F0067C843 /* Tools.swift */,
+				5AF0B63C274896660067C843 /* ViewModifiers.swift */,
+				5AF0B63E274897590067C843 /* CommonValues.swift */,
 			);
 			path = FantasyUI;
 			sourceTree = "<group>";
@@ -104,25 +101,6 @@
 				5A1D50252747DF9600A2CCB9 /* FantasyUITests.swift */,
 			);
 			path = FantasyUITests;
-			sourceTree = "<group>";
-		};
-		5A1D50352747DFE900A2CCB9 /* FantasyUIExample */ = {
-			isa = PBXGroup;
-			children = (
-				5A1D50362747DFE900A2CCB9 /* FantasyUIExampleApp.swift */,
-				5A1D50382747DFE900A2CCB9 /* ContentView.swift */,
-				5A1D503A2747DFE900A2CCB9 /* Assets.xcassets */,
-				5A1D503C2747DFE900A2CCB9 /* Preview Content */,
-			);
-			path = FantasyUIExample;
-			sourceTree = "<group>";
-		};
-		5A1D503C2747DFE900A2CCB9 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				5A1D503D2747DFE900A2CCB9 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,23 +153,6 @@
 			productReference = 5A1D50202747DF9600A2CCB9 /* FantasyUITests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		5A1D50332747DFE900A2CCB9 /* FantasyUIExample */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5A1D50412747DFE900A2CCB9 /* Build configuration list for PBXNativeTarget "FantasyUIExample" */;
-			buildPhases = (
-				5A1D50302747DFE900A2CCB9 /* Sources */,
-				5A1D50312747DFE900A2CCB9 /* Frameworks */,
-				5A1D50322747DFE900A2CCB9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = FantasyUIExample;
-			productName = FantasyUIExample;
-			productReference = 5A1D50342747DFE900A2CCB9 /* FantasyUIExample.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -206,9 +167,6 @@
 						CreatedOnToolsVersion = 13.1;
 					};
 					5A1D501F2747DF9600A2CCB9 = {
-						CreatedOnToolsVersion = 13.1;
-					};
-					5A1D50332747DFE900A2CCB9 = {
 						CreatedOnToolsVersion = 13.1;
 					};
 				};
@@ -228,7 +186,6 @@
 			targets = (
 				5A1D50152747DF9600A2CCB9 /* FantasyUI */,
 				5A1D501F2747DF9600A2CCB9 /* FantasyUITests */,
-				5A1D50332747DFE900A2CCB9 /* FantasyUIExample */,
 			);
 		};
 /* End PBXProject section */
@@ -248,15 +205,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5A1D50322747DFE900A2CCB9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5A1D503E2747DFE900A2CCB9 /* Preview Assets.xcassets in Resources */,
-				5A1D503B2747DFE900A2CCB9 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -264,8 +212,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A1D50432747E05F00A2CCB9 /* FantasyUI.swift in Sources */,
+				5A1D50432747E05F00A2CCB9 /* NavigationTools.swift in Sources */,
+				5AF0B63F274897590067C843 /* CommonValues.swift in Sources */,
+				5AF0B63D274896660067C843 /* ViewModifiers.swift in Sources */,
+				5AF0B637274893570067C843 /* PF_Sheet.swift in Sources */,
+				5AF0B639274893850067C843 /* PF_OffsetScrollView.swift in Sources */,
 				5A1D501B2747DF9600A2CCB9 /* FantasyUI.docc in Sources */,
+				5AF0B63B2748962F0067C843 /* Tools.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,15 +227,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A1D50262747DF9600A2CCB9 /* FantasyUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5A1D50302747DFE900A2CCB9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5A1D50392747DFE900A2CCB9 /* ContentView.swift in Sources */,
-				5A1D50372747DFE900A2CCB9 /* FantasyUIExampleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,64 +465,6 @@
 			};
 			name = Release;
 		};
-		5A1D503F2747DFE900A2CCB9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"FantasyUIExample/Preview Content\"";
-				DEVELOPMENT_TEAM = 6UB6WM6VQR;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.pruefantasy.FantasyUIExample;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Debug;
-		};
-		5A1D50402747DFE900A2CCB9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"FantasyUIExample/Preview Content\"";
-				DEVELOPMENT_TEAM = 6UB6WM6VQR;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.pruefantasy.FantasyUIExample;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -605,15 +491,6 @@
 			buildConfigurations = (
 				5A1D502E2747DF9600A2CCB9 /* Debug */,
 				5A1D502F2747DF9600A2CCB9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5A1D50412747DFE900A2CCB9 /* Build configuration list for PBXNativeTarget "FantasyUIExample" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5A1D503F2747DFE900A2CCB9 /* Debug */,
-				5A1D50402747DFE900A2CCB9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

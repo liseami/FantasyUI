@@ -1,0 +1,16 @@
+PODS:
+  - FantasyUI (0.0.3)
+
+DEPENDENCIES:
+  - FantasyUI (from `../`)
+
+EXTERNAL SOURCES:
+  FantasyUI:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  FantasyUI: d83e695d6aca609692fba34f4d9223ae97c6dea0
+
+PODFILE CHECKSUM: 90e311c0b910fe02f2fce5efe7a45c04bc6b3809
+
+COCOAPODS: 1.11.2
