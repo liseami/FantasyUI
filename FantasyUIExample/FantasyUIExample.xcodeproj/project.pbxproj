@@ -12,6 +12,7 @@
 		5AF0B66127489ABB0067C843 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF0B66027489ABB0067C843 /* ContentView.swift */; };
 		5AF0B66327489ABC0067C843 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AF0B66227489ABC0067C843 /* Assets.xcassets */; };
 		5AF0B66627489ABC0067C843 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AF0B66527489ABC0067C843 /* Preview Assets.xcassets */; };
+		5AF0B66D2748A1A80067C843 /* Offset_ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF0B66C2748A1A80067C843 /* Offset_ScrollView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		5AF0B66027489ABB0067C843 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5AF0B66227489ABC0067C843 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5AF0B66527489ABC0067C843 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5AF0B66C2748A1A80067C843 /* Offset_ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Offset_ScrollView.swift; sourceTree = "<group>"; };
 		77BD69AD2DDAB7F103353404 /* Pods_FantasyUIExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FantasyUIExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78D5F42D58AFA128D20DEA03 /* Pods-FantasyUIExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FantasyUIExample.debug.xcconfig"; path = "Target Support Files/Pods-FantasyUIExample/Pods-FantasyUIExample.debug.xcconfig"; sourceTree = "<group>"; };
 		CC7392A80FE4C28E1EACDCE5 /* Pods-FantasyUIExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FantasyUIExample.release.xcconfig"; path = "Target Support Files/Pods-FantasyUIExample/Pods-FantasyUIExample.release.xcconfig"; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 			children = (
 				5AF0B65E27489ABB0067C843 /* FantasyUIExampleApp.swift */,
 				5AF0B66027489ABB0067C843 /* ContentView.swift */,
+				5AF0B66C2748A1A80067C843 /* Offset_ScrollView.swift */,
 				5AF0B66227489ABC0067C843 /* Assets.xcassets */,
 				5AF0B66427489ABC0067C843 /* Preview Content */,
 			);
@@ -88,7 +91,6 @@
 				78D5F42D58AFA128D20DEA03 /* Pods-FantasyUIExample.debug.xcconfig */,
 				CC7392A80FE4C28E1EACDCE5 /* Pods-FantasyUIExample.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -188,6 +190,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AF0B66D2748A1A80067C843 /* Offset_ScrollView.swift in Sources */,
 				5AF0B66127489ABB0067C843 /* ContentView.swift in Sources */,
 				5AF0B65F27489ABB0067C843 /* FantasyUIExampleApp.swift in Sources */,
 			);

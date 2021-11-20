@@ -14,12 +14,13 @@ struct PF_SheetView<Content,Back> : View where Content : View ,Back:View{
     @GestureState var offset : CGFloat = 0
     @State private var bodyHeight : CGFloat = 0
     @Binding var show : Bool
-    var capsulebarColor : Color = .black
+    var capsulebarColor : Color? = .black
     
-    init(isPresented : Binding<Bool>,content:@escaping ()-> Content,background:@escaping ()-> Back)
+    init(isPresented : Binding<Bool>,capsulebarColor : Color? ,content:@escaping ()-> Content,background:@escaping ()-> Back)
     {
         self.content = content
         self.background = background
+        self.capsulebarColor = capsulebarColor
         _show = isPresented
     }
     
@@ -87,7 +88,7 @@ struct PF_SheetView<Content,Back> : View where Content : View ,Back:View{
 
 
 extension View{
-    func PF_Sheet<Content,Back>(isPresented: Binding<Bool>,  @ViewBuilder content: @escaping () -> Content,@ViewBuilder background: @escaping () -> Back) -> some View where Content : View,Back:View{
+    public func PF_Sheet<Content,Back>(isPresented: Binding<Bool>, capsulebarColor : Color? = nil, @ViewBuilder content: @escaping () -> Content,@ViewBuilder background: @escaping () -> Back) -> some View where Content : View,Back:View{
             self.overlay(
                     ZStack{
                             Color.black.opacity(0.7).ignoresSafeArea()
@@ -100,7 +101,7 @@ extension View{
                                     .transition(.opacity.animation(.spring()))
                                     .ifshow(isPresented.wrappedValue)
                      
-                        PF_SheetView(isPresented: isPresented, content: content, background: background)
+                        PF_SheetView(isPresented: isPresented,capsulebarColor: capsulebarColor, content: content, background: background)
                             .transition(.move(edge: .bottom).animation(.spring()))
                             .animation(.spring())
                             .ifshow(isPresented.wrappedValue )

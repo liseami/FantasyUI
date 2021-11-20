@@ -8,19 +8,23 @@
 import SwiftUI
 
 //可以测算offset的ScrollowView
-struct PF_OffsetScrollView<Body> : View  where Body : View{
+public struct PF_OffsetScrollView<Body> : View  where Body : View{
+    
     
     @Binding var offset : CGFloat
     let content : ()-> Body
+   
     
     
-    init(offset:Binding<CGFloat>,content : @escaping ()-> Body) {
+    public init(offset:Binding<CGFloat>,content : @escaping ()-> Body) {
         _offset = offset
         self.content = content
     }
+    
+    
     // MARK: - Body
     @ViewBuilder
-    var body: some View{
+    public var body: some View{
         
         ScrollView(.vertical, showsIndicators: false)  {
             offsetDetector
