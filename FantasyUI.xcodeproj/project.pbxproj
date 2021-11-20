@@ -17,6 +17,7 @@
 		5AF0B63B2748962F0067C843 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF0B63A2748962F0067C843 /* Tools.swift */; };
 		5AF0B63D274896660067C843 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF0B63C274896660067C843 /* ViewModifiers.swift */; };
 		5AF0B63F274897590067C843 /* CommonValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF0B63E274897590067C843 /* CommonValues.swift */; };
+		5AF0B66F2748EF430067C843 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF0B66E2748EF420067C843 /* ViewExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,7 @@
 		5AF0B63A2748962F0067C843 /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 		5AF0B63C274896660067C843 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
 		5AF0B63E274897590067C843 /* CommonValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonValues.swift; sourceTree = "<group>"; };
+		5AF0B66E2748EF420067C843 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				5AF0B636274893570067C843 /* PF_Sheet.swift */,
 				5AF0B638274893850067C843 /* PF_OffsetScrollView.swift */,
 				5AF0B63A2748962F0067C843 /* Tools.swift */,
+				5AF0B66E2748EF420067C843 /* ViewExtensions.swift */,
 				5AF0B63C274896660067C843 /* ViewModifiers.swift */,
 				5AF0B63E274897590067C843 /* CommonValues.swift */,
 			);
@@ -214,6 +217,7 @@
 			files = (
 				5A1D50432747E05F00A2CCB9 /* NavigationTools.swift in Sources */,
 				5AF0B63F274897590067C843 /* CommonValues.swift in Sources */,
+				5AF0B66F2748EF430067C843 /* ViewExtensions.swift in Sources */,
 				5AF0B63D274896660067C843 /* ViewModifiers.swift in Sources */,
 				5AF0B637274893570067C843 /* PF_Sheet.swift in Sources */,
 				5AF0B639274893850067C843 /* PF_OffsetScrollView.swift in Sources */,
