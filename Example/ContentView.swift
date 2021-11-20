@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import FantasyUI
+
 
 struct  ContentView: View {
     @State private var PF_Half_Sheet : Bool = false
@@ -14,6 +14,7 @@ struct  ContentView: View {
     @State private var PF_Navilink : Bool  = false
     @State private var PF_FullScreen : Bool  = false
     @State private var ShowOffset_ScrollView : Bool = false
+    @State private var offset : CGFloat = 0
     var body: some View {
         
         NavigationView {
@@ -42,7 +43,6 @@ struct  ContentView: View {
                 
                 Section {
                     VStack(alignment: .leading,spacing: 12){
-                        Text("可捕获下拉距离的ScrollView")
                         Button("Offset_ScrollView"){
                             ShowOffset_ScrollView.toggle()
                         }
@@ -50,13 +50,15 @@ struct  ContentView: View {
                     
                     
                 }header: {
-                    Text("Offset_ScrollView")
+                    Text("Offset_ScrollView\r可捕获下拉距离的ScrollView")
                 }
                 
             }
             .navigationTitle("PrueFantasy")
             .PF_Navilink(isPresented: $ShowOffset_ScrollView, content: {
-                Offset_ScrollView()
+                PF_OffsetScrollView(offset: $offset) {
+                    Text("\(offset)")
+                }
             })
             .PF_SystemSheet(isPresented: $System_Sheet, onDismiss: {
                 

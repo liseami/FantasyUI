@@ -1,6 +1,0 @@
-framework module FantasyUI {
-  umbrella header "FantasyUI-umbrella.h"
-
-  export *
-  module * { export * }
-}
