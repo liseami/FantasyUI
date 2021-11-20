@@ -13,15 +13,15 @@ import AppKit
 import UIKit
 #endif
 
-@available(iOS 13.0, tvOS 13.0, macOS 10.15.0, *)
-extension View {
+
+extension SwiftUI.View {
     public func inject<SomeView>(_ view: SomeView) -> some View where SomeView: View {
         return background(view)
     }
 }
 
-@available(iOS 13.0, tvOS 13.0, macOS 10.15.0, *)
-extension View {
+
+extension SwiftUI.View {
     
     ///封装系统Navilink
      public func PF_Navilink<Link>(isPresented: Binding<Bool>, content: @escaping () -> Link ) -> some View where Link : View{

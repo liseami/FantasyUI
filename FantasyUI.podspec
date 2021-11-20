@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "FantasyUI"
-  s.version      = "0.0.4"
+  s.version      = "0.0.5"
   s.summary      = "FantasyUI 金诚所至，金石为开.FantasyUI 金诚所至，金石为开.FantasyUI 金诚所至，金石为开.FantasyUI 金诚所至，金石为开.FantasyUI 金诚所至，金石为开."
 
 
@@ -91,9 +91,9 @@ Pod::Spec.new do |s|
 
   # s.source = { :git => 'https://github.com/liseami/FantasyUI.git'}
    s.source           = {
-    :git => 'https://github.com/liseami/FantasyUI.git',
-    :tag => s.version.to_s,
-    :submodules => true
+    :git => 'https://github.com/liseami/FantasyUI.git'
+    # :tag => s.version.to_s,
+    # :submodules => true
   }
 # s.source = { :git => 'https://github.com/liseami/FantasyUI.git', :tag => "#{s.version}" }
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
