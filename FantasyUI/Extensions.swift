@@ -13,10 +13,15 @@ import UIKit
 
 extension UIApplication {
     //获取顶级试图
+    //...
+    //...
     class func topViewController(controller: UIViewController? = UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController) -> UIViewController? {
         if let navigationController = controller as? UINavigationController {
             return topViewController(controller: navigationController.visibleViewController)
         }
+        
+        
+        
         if let tabController = controller as? UITabBarController {
             if let selected = tabController.selectedViewController {
                 return topViewController(controller: selected)
