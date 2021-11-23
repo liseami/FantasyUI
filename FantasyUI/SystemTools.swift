@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 
 
 
@@ -47,5 +48,52 @@ public func showShareAppSheet(shareitems : [Any]){
     if let topController = UIApplication.topViewController() {
         let activityController = UIActivityViewController(activityItems: shareitems, applicationActivities: nil)
         topController.present(activityController, animated: true, completion: nil)
+    }
+}
+
+
+
+public func getDominantColorsByUIImageData(_ data : Data,completion : @escaping (Color) -> ()){
+    DispatchQueue.global().async {
+        if let uiimage = UIImage(data: data ){
+            do {
+                let background = try uiimage.averageColor()
+                var color = Color.clear
+                if #available(iOS 15.0, *) {
+                    color = Color(uiColor: background)
+                } else {
+                    let hex = background.hex
+                    color = Color(hex: hex)
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
+                    completion(color)
+                })
+                
+            } catch {
+                
+            }
+        }
+    }
+}
+
+
+public func getDominantColorsByUIImage(_ uiimage : UIImage,completion : @escaping (Color) -> ()){
+    DispatchQueue.global().async {
+        
+            do {
+                let background = try uiimage.averageColor()
+                var color = Color.clear
+                if #available(iOS 15.0, *) {
+                    color = Color(uiColor: background)
+                } else {
+                    let hex = background.hex
+                    color = Color(hex: hex)
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
+                    completion(color)
+                })
+            } catch {
+                
+            }
     }
 }
