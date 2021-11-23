@@ -11,6 +11,7 @@ import SwiftUI
 
 
 
+
 //MARK:马达震动反馈//////////////////////////////////////////
 //马达震动.成功信号
 public func madaSuccess() {
