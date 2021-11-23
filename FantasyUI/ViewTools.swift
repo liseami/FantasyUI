@@ -16,18 +16,14 @@ extension View {
     
     
     //MARK: 逻辑显示
-    public func ifshow(_ show : Bool,animation:Animation? = nil , transition:AnyTransition? = nil ) -> some View {
+    public func ifshow(_ show : Bool,  animation: Animation? = nil , transition: AnyTransition? = nil ) -> some View {
         Group{
-            if show {
-                if transition != nil {
-                   self
-                        .PF_Animation(animation ?? nil)
-                        .transition(transition!.animation(animation))
-                }else{
-                      self
-                        .PF_Animation(animation ?? nil)
+            if show
+                {
+                       self
+                            .animation(animation)
+                            .transition(transition ?? .opacity)
                 }
-            }
         }
     }
     
