@@ -12,25 +12,25 @@ import UIKit
 
 //MARK:马达震动反馈//////////////////////////////////////////
 //马达震动.成功信号
-func madaSuccess() {
+public func madaSuccess() {
     let generator = UINotificationFeedbackGenerator()
     generator.notificationOccurred(.success)
 }
 
 //马达震动.警告信号
-func madaWarning() {
+public func madaWarning() {
     let generator = UINotificationFeedbackGenerator()
     generator.notificationOccurred(.warning)
 }
 
 //马达震动.错误信号
-func madaError() {
+public func madaError() {
     let generator = UINotificationFeedbackGenerator()
     generator.notificationOccurred(.error)
 }
 //马达震动反馈//////////////////////////////////////////
 
-func madasoft() {
+public func madasoft() {
     let generator = UIImpactFeedbackGenerator(style: .soft)
     generator.impactOccurred()
 }
