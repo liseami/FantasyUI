@@ -19,6 +19,7 @@ import UIKit
 extension SwiftUI.View {
     public func GoBackground<SomeView>(_ view: SomeView) -> some View where SomeView: View {
         return background(view)
+        
     }
 }
 
