@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "FantasyUI"
-  s.version      = "1.0.8"
+  s.version      = "1.0.9"
   s.summary      = "FantasyUI 金诚所至，金石为开.FantasyUI 金诚所至，金石为开.FantasyUI 金诚所至，金石为开.FantasyUI 金诚所至，金石为开.FantasyUI 金诚所至，金石为开."
 
 
@@ -104,7 +104,7 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "FantasyUI", "FantasyUI/**/*.{h,m}"
+  s.source_files  = "*.swift","FantasyUI", "FantasyUI/**/*.{h,m}"
   s.exclude_files = "FantasyUI/Exclude"
   s.public_header_files = "FantasyUI/**/*.h"
 
