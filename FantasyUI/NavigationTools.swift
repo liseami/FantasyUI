@@ -3,7 +3,7 @@
 //  FantasyUI
 //
 //  Created by Liseami on 2021/11/19.
-//
+//  Submodule of Cashmix App and TimeMachine App
 
 import SwiftUI
 
@@ -28,17 +28,24 @@ extension SwiftUI.View {
          return GoBackground(
             ZStack{
                 Group{
+                    
+                    
+                    
                     NavigationLink(isActive: isPresented) {
                         content()
                     } label: {
                         EmptyView()
                     }
+                    
                     //解决自动弹出Bug
                     NavigationLink {
                         EmptyView()
                     } label: {
                         EmptyView()
                     }
+                    
+                    //123
+                    
                 }
             }
         )
