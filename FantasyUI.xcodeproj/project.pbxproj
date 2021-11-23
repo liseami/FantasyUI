@@ -7,32 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5A1D501B2747DF9600A2CCB9 /* FantasyUI.docc in Sources */ = {isa = PBXBuildFile; fileRef = 5A1D501A2747DF9600A2CCB9 /* FantasyUI.docc */; };
 		5A1D50212747DF9600A2CCB9 /* FantasyUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A1D50162747DF9600A2CCB9 /* FantasyUI.framework */; };
 		5A1D50262747DF9600A2CCB9 /* FantasyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1D50252747DF9600A2CCB9 /* FantasyUITests.swift */; };
-		5A1D50272747DF9600A2CCB9 /* FantasyUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A1D50192747DF9600A2CCB9 /* FantasyUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5A1D50432747E05F00A2CCB9 /* NavigationTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1D50422747E05F00A2CCB9 /* NavigationTools.swift */; };
-		5A611713274C8652006CB129 /* PublicStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A611712274C8652006CB129 /* PublicStruct.swift */; };
-		5A611714274C9B7F006CB129 /* PublicStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A611712274C8652006CB129 /* PublicStruct.swift */; };
-		5A6117D0274CB87A006CB129 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6117CB274CB87A006CB129 /* ViewModifiers.swift */; };
-		5A6117D1274CB87A006CB129 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6117CB274CB87A006CB129 /* ViewModifiers.swift */; };
-		5A6117D2274CB87A006CB129 /* ViewTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6117CC274CB87A006CB129 /* ViewTools.swift */; };
-		5A6117D3274CB87A006CB129 /* ViewTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6117CC274CB87A006CB129 /* ViewTools.swift */; };
-		5A6117D4274CB87A006CB129 /* PF_OffsetScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6117CE274CB87A006CB129 /* PF_OffsetScrollView.swift */; };
-		5A6117D5274CB87A006CB129 /* PF_OffsetScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6117CE274CB87A006CB129 /* PF_OffsetScrollView.swift */; };
-		5A6117D6274CB87A006CB129 /* PF_Sheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6117CF274CB87A006CB129 /* PF_Sheet.swift */; };
-		5A6117D7274CB87A006CB129 /* PF_Sheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6117CF274CB87A006CB129 /* PF_Sheet.swift */; };
-		5A6117DC274CC236006CB129 /* SystemTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6117DB274CC236006CB129 /* SystemTools.swift */; };
-		5A6117DD274CC236006CB129 /* SystemTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6117DB274CC236006CB129 /* SystemTools.swift */; };
-		5AF0B63F274897590067C843 /* CommonValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF0B63E274897590067C843 /* CommonValues.swift */; };
+		5AA9C018274CD9BC00D97A8E /* ViewTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9C00E274CD9BC00D97A8E /* ViewTools.swift */; };
+		5AA9C019274CD9BC00D97A8E /* ViewTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9C00E274CD9BC00D97A8E /* ViewTools.swift */; };
+		5AA9C01A274CD9BC00D97A8E /* FantasyUI.md in Resources */ = {isa = PBXBuildFile; fileRef = 5AA9C00F274CD9BC00D97A8E /* FantasyUI.md */; };
+		5AA9C01B274CD9BC00D97A8E /* FantasyUI.md in Resources */ = {isa = PBXBuildFile; fileRef = 5AA9C00F274CD9BC00D97A8E /* FantasyUI.md */; };
+		5AA9C01C274CD9BC00D97A8E /* FantasyUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 5AA9C010274CD9BC00D97A8E /* FantasyUI.h */; };
+		5AA9C01D274CD9BC00D97A8E /* NavigationTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9C011274CD9BC00D97A8E /* NavigationTools.swift */; };
+		5AA9C01E274CD9BC00D97A8E /* NavigationTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9C011274CD9BC00D97A8E /* NavigationTools.swift */; };
+		5AA9C01F274CD9BC00D97A8E /* PF_Sheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9C012274CD9BC00D97A8E /* PF_Sheet.swift */; };
+		5AA9C020274CD9BC00D97A8E /* PF_Sheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9C012274CD9BC00D97A8E /* PF_Sheet.swift */; };
+		5AA9C021274CD9BC00D97A8E /* SystemTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9C013274CD9BC00D97A8E /* SystemTools.swift */; };
+		5AA9C022274CD9BC00D97A8E /* SystemTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9C013274CD9BC00D97A8E /* SystemTools.swift */; };
+		5AA9C023274CD9BC00D97A8E /* PF_OffsetScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9C014274CD9BC00D97A8E /* PF_OffsetScrollView.swift */; };
+		5AA9C024274CD9BC00D97A8E /* PF_OffsetScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9C014274CD9BC00D97A8E /* PF_OffsetScrollView.swift */; };
+		5AA9C025274CD9BC00D97A8E /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9C015274CD9BC00D97A8E /* ViewModifiers.swift */; };
+		5AA9C026274CD9BC00D97A8E /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9C015274CD9BC00D97A8E /* ViewModifiers.swift */; };
+		5AA9C027274CD9BC00D97A8E /* CommonValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9C016274CD9BC00D97A8E /* CommonValues.swift */; };
+		5AA9C028274CD9BC00D97A8E /* CommonValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9C016274CD9BC00D97A8E /* CommonValues.swift */; };
+		5AA9C029274CD9BC00D97A8E /* PublicStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9C017274CD9BC00D97A8E /* PublicStruct.swift */; };
+		5AA9C02A274CD9BC00D97A8E /* PublicStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9C017274CD9BC00D97A8E /* PublicStruct.swift */; };
+		5AA9C02C274CD9D700D97A8E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9C02B274CD9D700D97A8E /* Extensions.swift */; };
+		5AA9C02D274CD9D700D97A8E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9C02B274CD9D700D97A8E /* Extensions.swift */; };
+		5AA9C032274CDA1900D97A8E /* FantasyUI.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 5AA9C031274CDA1900D97A8E /* FantasyUI.podspec */; };
+		5AA9C033274CDA1900D97A8E /* FantasyUI.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 5AA9C031274CDA1900D97A8E /* FantasyUI.podspec */; };
 		5AF0B67727491F270067C843 /* ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF0B67627491F270067C843 /* ExampleApp.swift */; };
 		5AF0B67927491F270067C843 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF0B67827491F270067C843 /* ContentView.swift */; };
 		5AF0B67B27491F280067C843 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AF0B67A27491F280067C843 /* Assets.xcassets */; };
 		5AF0B67E27491F280067C843 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AF0B67D27491F280067C843 /* Preview Assets.xcassets */; };
 		5AF0B68027491F280067C843 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF0B67F27491F280067C843 /* Persistence.swift */; };
 		5AF0B68327491F280067C843 /* Example.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5AF0B68127491F280067C843 /* Example.xcdatamodeld */; };
-		5AF0B6882749207C0067C843 /* NavigationTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1D50422747E05F00A2CCB9 /* NavigationTools.swift */; };
-		5AF0B68C2749207C0067C843 /* CommonValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF0B63E274897590067C843 /* CommonValues.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,18 +52,20 @@
 
 /* Begin PBXFileReference section */
 		5A1D50162747DF9600A2CCB9 /* FantasyUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FantasyUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5A1D50192747DF9600A2CCB9 /* FantasyUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FantasyUI.h; sourceTree = "<group>"; };
-		5A1D501A2747DF9600A2CCB9 /* FantasyUI.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = FantasyUI.docc; sourceTree = "<group>"; };
 		5A1D50202747DF9600A2CCB9 /* FantasyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FantasyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A1D50252747DF9600A2CCB9 /* FantasyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FantasyUITests.swift; sourceTree = "<group>"; };
-		5A1D50422747E05F00A2CCB9 /* NavigationTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTools.swift; sourceTree = "<group>"; };
-		5A611712274C8652006CB129 /* PublicStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicStruct.swift; sourceTree = "<group>"; };
-		5A6117CB274CB87A006CB129 /* ViewModifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
-		5A6117CC274CB87A006CB129 /* ViewTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewTools.swift; sourceTree = "<group>"; };
-		5A6117CE274CB87A006CB129 /* PF_OffsetScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PF_OffsetScrollView.swift; sourceTree = "<group>"; };
-		5A6117CF274CB87A006CB129 /* PF_Sheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PF_Sheet.swift; sourceTree = "<group>"; };
-		5A6117DB274CC236006CB129 /* SystemTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemTools.swift; sourceTree = "<group>"; };
-		5AF0B63E274897590067C843 /* CommonValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonValues.swift; sourceTree = "<group>"; };
+		5AA9C00E274CD9BC00D97A8E /* ViewTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewTools.swift; sourceTree = "<group>"; };
+		5AA9C00F274CD9BC00D97A8E /* FantasyUI.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = FantasyUI.md; sourceTree = "<group>"; };
+		5AA9C010274CD9BC00D97A8E /* FantasyUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FantasyUI.h; sourceTree = "<group>"; };
+		5AA9C011274CD9BC00D97A8E /* NavigationTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationTools.swift; sourceTree = "<group>"; };
+		5AA9C012274CD9BC00D97A8E /* PF_Sheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PF_Sheet.swift; sourceTree = "<group>"; };
+		5AA9C013274CD9BC00D97A8E /* SystemTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemTools.swift; sourceTree = "<group>"; };
+		5AA9C014274CD9BC00D97A8E /* PF_OffsetScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PF_OffsetScrollView.swift; sourceTree = "<group>"; };
+		5AA9C015274CD9BC00D97A8E /* ViewModifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
+		5AA9C016274CD9BC00D97A8E /* CommonValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonValues.swift; sourceTree = "<group>"; };
+		5AA9C017274CD9BC00D97A8E /* PublicStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicStruct.swift; sourceTree = "<group>"; };
+		5AA9C02B274CD9D700D97A8E /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		5AA9C031274CDA1900D97A8E /* FantasyUI.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FantasyUI.podspec; sourceTree = "<group>"; };
 		5AF0B67427491F270067C843 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AF0B67627491F270067C843 /* ExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleApp.swift; sourceTree = "<group>"; };
 		5AF0B67827491F270067C843 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -97,6 +104,7 @@
 		5A1D500C2747DF9600A2CCB9 = {
 			isa = PBXGroup;
 			children = (
+				5AA9C031274CDA1900D97A8E /* FantasyUI.podspec */,
 				5A1D50182747DF9600A2CCB9 /* FantasyUI */,
 				5A1D50242747DF9600A2CCB9 /* FantasyUITests */,
 				5AF0B67527491F270067C843 /* Example */,
@@ -117,14 +125,17 @@
 		5A1D50182747DF9600A2CCB9 /* FantasyUI */ = {
 			isa = PBXGroup;
 			children = (
-				5A1D50192747DF9600A2CCB9 /* FantasyUI.h */,
-				5A1D501A2747DF9600A2CCB9 /* FantasyUI.docc */,
-				5A1D50422747E05F00A2CCB9 /* NavigationTools.swift */,
-				5AF0B63E274897590067C843 /* CommonValues.swift */,
-				5A6117CD274CB87A006CB129 /* PF_Views */,
-				5A6117CA274CB87A006CB129 /* ViewTools */,
-				5A611712274C8652006CB129 /* PublicStruct.swift */,
-				5A6117DB274CC236006CB129 /* SystemTools.swift */,
+				5AA9C016274CD9BC00D97A8E /* CommonValues.swift */,
+				5AA9C010274CD9BC00D97A8E /* FantasyUI.h */,
+				5AA9C00F274CD9BC00D97A8E /* FantasyUI.md */,
+				5AA9C011274CD9BC00D97A8E /* NavigationTools.swift */,
+				5AA9C02B274CD9D700D97A8E /* Extensions.swift */,
+				5AA9C014274CD9BC00D97A8E /* PF_OffsetScrollView.swift */,
+				5AA9C012274CD9BC00D97A8E /* PF_Sheet.swift */,
+				5AA9C017274CD9BC00D97A8E /* PublicStruct.swift */,
+				5AA9C013274CD9BC00D97A8E /* SystemTools.swift */,
+				5AA9C015274CD9BC00D97A8E /* ViewModifiers.swift */,
+				5AA9C00E274CD9BC00D97A8E /* ViewTools.swift */,
 			);
 			path = FantasyUI;
 			sourceTree = "<group>";
@@ -135,24 +146,6 @@
 				5A1D50252747DF9600A2CCB9 /* FantasyUITests.swift */,
 			);
 			path = FantasyUITests;
-			sourceTree = "<group>";
-		};
-		5A6117CA274CB87A006CB129 /* ViewTools */ = {
-			isa = PBXGroup;
-			children = (
-				5A6117CB274CB87A006CB129 /* ViewModifiers.swift */,
-				5A6117CC274CB87A006CB129 /* ViewTools.swift */,
-			);
-			path = ViewTools;
-			sourceTree = "<group>";
-		};
-		5A6117CD274CB87A006CB129 /* PF_Views */ = {
-			isa = PBXGroup;
-			children = (
-				5A6117CE274CB87A006CB129 /* PF_OffsetScrollView.swift */,
-				5A6117CF274CB87A006CB129 /* PF_Sheet.swift */,
-			);
-			path = PF_Views;
 			sourceTree = "<group>";
 		};
 		5AF0B67527491F270067C843 /* Example */ = {
@@ -183,7 +176,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A1D50272747DF9600A2CCB9 /* FantasyUI.h in Headers */,
+				5AA9C01C274CD9BC00D97A8E /* FantasyUI.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +248,7 @@
 				TargetAttributes = {
 					5A1D50152747DF9600A2CCB9 = {
 						CreatedOnToolsVersion = 13.1;
+						LastSwiftMigration = 1310;
 					};
 					5A1D501F2747DF9600A2CCB9 = {
 						CreatedOnToolsVersion = 13.1;
@@ -289,6 +283,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AA9C01A274CD9BC00D97A8E /* FantasyUI.md in Resources */,
+				5AA9C032274CDA1900D97A8E /* FantasyUI.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +299,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AA9C01B274CD9BC00D97A8E /* FantasyUI.md in Resources */,
+				5AA9C033274CDA1900D97A8E /* FantasyUI.podspec in Resources */,
 				5AF0B67E27491F280067C843 /* Preview Assets.xcassets in Resources */,
 				5AF0B67B27491F280067C843 /* Assets.xcassets in Resources */,
 			);
@@ -315,15 +313,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A6117D2274CB87A006CB129 /* ViewTools.swift in Sources */,
-				5A6117D0274CB87A006CB129 /* ViewModifiers.swift in Sources */,
-				5A6117D4274CB87A006CB129 /* PF_OffsetScrollView.swift in Sources */,
-				5A1D50432747E05F00A2CCB9 /* NavigationTools.swift in Sources */,
-				5A6117DC274CC236006CB129 /* SystemTools.swift in Sources */,
-				5AF0B63F274897590067C843 /* CommonValues.swift in Sources */,
-				5A611713274C8652006CB129 /* PublicStruct.swift in Sources */,
-				5A1D501B2747DF9600A2CCB9 /* FantasyUI.docc in Sources */,
-				5A6117D6274CB87A006CB129 /* PF_Sheet.swift in Sources */,
+				5AA9C023274CD9BC00D97A8E /* PF_OffsetScrollView.swift in Sources */,
+				5AA9C02C274CD9D700D97A8E /* Extensions.swift in Sources */,
+				5AA9C029274CD9BC00D97A8E /* PublicStruct.swift in Sources */,
+				5AA9C027274CD9BC00D97A8E /* CommonValues.swift in Sources */,
+				5AA9C018274CD9BC00D97A8E /* ViewTools.swift in Sources */,
+				5AA9C01D274CD9BC00D97A8E /* NavigationTools.swift in Sources */,
+				5AA9C025274CD9BC00D97A8E /* ViewModifiers.swift in Sources */,
+				5AA9C021274CD9BC00D97A8E /* SystemTools.swift in Sources */,
+				5AA9C01F274CD9BC00D97A8E /* PF_Sheet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,18 +337,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A6117D5274CB87A006CB129 /* PF_OffsetScrollView.swift in Sources */,
-				5A6117D3274CB87A006CB129 /* ViewTools.swift in Sources */,
 				5AF0B68327491F280067C843 /* Example.xcdatamodeld in Sources */,
-				5A6117D7274CB87A006CB129 /* PF_Sheet.swift in Sources */,
-				5A611714274C9B7F006CB129 /* PublicStruct.swift in Sources */,
+				5AA9C02A274CD9BC00D97A8E /* PublicStruct.swift in Sources */,
 				5AF0B68027491F280067C843 /* Persistence.swift in Sources */,
-				5A6117D1274CB87A006CB129 /* ViewModifiers.swift in Sources */,
+				5AA9C022274CD9BC00D97A8E /* SystemTools.swift in Sources */,
 				5AF0B67927491F270067C843 /* ContentView.swift in Sources */,
-				5AF0B68C2749207C0067C843 /* CommonValues.swift in Sources */,
 				5AF0B67727491F270067C843 /* ExampleApp.swift in Sources */,
-				5A6117DD274CC236006CB129 /* SystemTools.swift in Sources */,
-				5AF0B6882749207C0067C843 /* NavigationTools.swift in Sources */,
+				5AA9C026274CD9BC00D97A8E /* ViewModifiers.swift in Sources */,
+				5AA9C020274CD9BC00D97A8E /* PF_Sheet.swift in Sources */,
+				5AA9C02D274CD9D700D97A8E /* Extensions.swift in Sources */,
+				5AA9C019274CD9BC00D97A8E /* ViewTools.swift in Sources */,
+				5AA9C01E274CD9BC00D97A8E /* NavigationTools.swift in Sources */,
+				5AA9C028274CD9BC00D97A8E /* CommonValues.swift in Sources */,
+				5AA9C024274CD9BC00D97A8E /* PF_OffsetScrollView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,6 +489,7 @@
 		5A1D502B2747DF9600A2CCB9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -511,6 +511,7 @@
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -519,6 +520,7 @@
 		5A1D502C2747DF9600A2CCB9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;

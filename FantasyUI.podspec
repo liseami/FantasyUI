@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "FantasyUI"
-  s.version      = "1.0.3"
+  s.version      = "1.0.8"
   s.summary      = "FantasyUI 金诚所至，金石为开.FantasyUI 金诚所至，金石为开.FantasyUI 金诚所至，金石为开.FantasyUI 金诚所至，金石为开.FantasyUI 金诚所至，金石为开."
 
 

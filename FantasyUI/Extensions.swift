@@ -8,6 +8,8 @@
 import Foundation
 import SwiftUI
 import StoreKit
+import UIKit
+
 
 extension UIApplication {
     //获取顶级试图
