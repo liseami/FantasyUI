@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "FantasyUI"
-  s.version      = "1.0.0"
+  s.version      = "1.0.3"
   s.summary      = "FantasyUI 金诚所至，金石为开.FantasyUI 金诚所至，金石为开.FantasyUI 金诚所至，金石为开.FantasyUI 金诚所至，金石为开.FantasyUI 金诚所至，金石为开."
 
 
@@ -106,8 +106,7 @@ Pod::Spec.new do |s|
 
   s.source_files  = "FantasyUI", "FantasyUI/**/*.{h,m}"
   s.exclude_files = "FantasyUI/Exclude"
-
-  # spec.public_header_files = "Classes/**/*.h"
+  s.public_header_files = "FantasyUI/**/*.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
