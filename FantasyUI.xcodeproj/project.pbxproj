@@ -22,6 +22,8 @@
 		5A6117D5274CB87A006CB129 /* PF_OffsetScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6117CE274CB87A006CB129 /* PF_OffsetScrollView.swift */; };
 		5A6117D6274CB87A006CB129 /* PF_Sheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6117CF274CB87A006CB129 /* PF_Sheet.swift */; };
 		5A6117D7274CB87A006CB129 /* PF_Sheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6117CF274CB87A006CB129 /* PF_Sheet.swift */; };
+		5A6117DC274CC236006CB129 /* SystemTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6117DB274CC236006CB129 /* SystemTools.swift */; };
+		5A6117DD274CC236006CB129 /* SystemTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6117DB274CC236006CB129 /* SystemTools.swift */; };
 		5AF0B63F274897590067C843 /* CommonValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF0B63E274897590067C843 /* CommonValues.swift */; };
 		5AF0B67727491F270067C843 /* ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF0B67627491F270067C843 /* ExampleApp.swift */; };
 		5AF0B67927491F270067C843 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF0B67827491F270067C843 /* ContentView.swift */; };
@@ -55,6 +57,7 @@
 		5A6117CC274CB87A006CB129 /* ViewTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewTools.swift; sourceTree = "<group>"; };
 		5A6117CE274CB87A006CB129 /* PF_OffsetScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PF_OffsetScrollView.swift; sourceTree = "<group>"; };
 		5A6117CF274CB87A006CB129 /* PF_Sheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PF_Sheet.swift; sourceTree = "<group>"; };
+		5A6117DB274CC236006CB129 /* SystemTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemTools.swift; sourceTree = "<group>"; };
 		5AF0B63E274897590067C843 /* CommonValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonValues.swift; sourceTree = "<group>"; };
 		5AF0B67427491F270067C843 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AF0B67627491F270067C843 /* ExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleApp.swift; sourceTree = "<group>"; };
@@ -121,6 +124,7 @@
 				5A6117CD274CB87A006CB129 /* PF_Views */,
 				5A6117CA274CB87A006CB129 /* ViewTools */,
 				5A611712274C8652006CB129 /* PublicStruct.swift */,
+				5A6117DB274CC236006CB129 /* SystemTools.swift */,
 			);
 			path = FantasyUI;
 			sourceTree = "<group>";
@@ -315,6 +319,7 @@
 				5A6117D0274CB87A006CB129 /* ViewModifiers.swift in Sources */,
 				5A6117D4274CB87A006CB129 /* PF_OffsetScrollView.swift in Sources */,
 				5A1D50432747E05F00A2CCB9 /* NavigationTools.swift in Sources */,
+				5A6117DC274CC236006CB129 /* SystemTools.swift in Sources */,
 				5AF0B63F274897590067C843 /* CommonValues.swift in Sources */,
 				5A611713274C8652006CB129 /* PublicStruct.swift in Sources */,
 				5A1D501B2747DF9600A2CCB9 /* FantasyUI.docc in Sources */,
@@ -344,6 +349,7 @@
 				5AF0B67927491F270067C843 /* ContentView.swift in Sources */,
 				5AF0B68C2749207C0067C843 /* CommonValues.swift in Sources */,
 				5AF0B67727491F270067C843 /* ExampleApp.swift in Sources */,
+				5A6117DD274CC236006CB129 /* SystemTools.swift in Sources */,
 				5AF0B6882749207C0067C843 /* NavigationTools.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
