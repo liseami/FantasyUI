@@ -71,7 +71,9 @@ public func getDominantColorsByUIImageData(_ data : Data,completion : @escaping 
                 })
                 
             } catch {
-                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
+                    completion(Color.black)
+                })
             }
         }
     }
@@ -94,7 +96,9 @@ public func getDominantColorsByUIImage(_ uiimage : UIImage,completion : @escapin
                     completion(color)
                 })
             } catch {
-                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
+                    completion(Color.black)
+                })
             }
     }
 }
