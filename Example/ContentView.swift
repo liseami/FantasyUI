@@ -54,6 +54,7 @@ struct  ContentView: View {
                 }
                 
             }
+            .listStyle(.insetGrouped )
             .navigationTitle("PrueFantasy")
             .PF_Navilink(isPresented: $ShowOffset_ScrollView, content: {
                 PF_OffsetScrollView(offset: $offset) {
@@ -65,7 +66,7 @@ struct  ContentView: View {
             }, content: {
                 Text("$System_Sheet")
             })
-            .PF_Sheet(isPresented: $PF_Half_Sheet, capsulebarColor: Color.gray) {
+            .PF_Sheet(isPresented: $PF_Half_Sheet, capsulebarColor: Color.gray,backcornerRadius: 12) {
                 VStack{
                     ForEach(0..<12){ index in
                         HStack{

@@ -16,12 +16,17 @@ extension View {
     
     
     //MARK: 逻辑显示
-    public func ifshow(_ show : Bool,transition:AnyTransition = .move(edge: .bottom)) -> some View {
+    public func ifshow(_ show : Bool,animation:Animation? = nil , transition:AnyTransition? = nil ) -> some View {
         Group{
             if show {
-                self
-                    .PF_Animation(.spring())
-                    .transition(transition)
+                if transition != nil {
+                   self
+                        .PF_Animation(animation ?? nil)
+                        .transition(transition!.animation(animation))
+                }else{
+                      self
+                        .PF_Animation(animation ?? nil)
+                }
             }
         }
     }
@@ -73,11 +78,6 @@ extension View {
     public func isPreview() -> some View{
         self.modifier(Preview())
     }
-    
-    
-    
-    
-    
 }
 
 
