@@ -42,3 +42,10 @@ public func closeKeyboard(){
 }
 
 
+//展示系统ShareSheet
+public func showShareAppSheet(shareitems : [Any]){
+    if let topController = UIApplication.topViewController() {
+        let activityController = UIActivityViewController(activityItems: shareitems, applicationActivities: nil)
+        topController.present(activityController, animated: true, completion: nil)
+    }
+}
