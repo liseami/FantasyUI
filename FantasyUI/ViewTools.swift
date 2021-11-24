@@ -21,11 +21,13 @@ extension View {
             if show
                 {
                        self
-                            .animation(animation)
+                    .animation(animation, value: show)
                             .transition(transition ?? .opacity)
                 }
         }
     }
+    
+    
     
     //MARK: 添加时间接收器
     public func PF_Timer(timer:Publishers.Autoconnect<Timer.TimerPublisher>,showStep:Binding<Int>,limit:Int) -> some View {

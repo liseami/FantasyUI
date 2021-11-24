@@ -21,7 +21,9 @@ struct  ContentView: View {
             List {
                 Section {
                     Button("PF_Half_Sheet"){
-                        PF_Half_Sheet.toggle()
+                        withAnimation(.spring()){
+                            PF_Half_Sheet.toggle()
+                        }
                     }
                     Button("System_Sheet"){
                         System_Sheet.toggle()
@@ -66,7 +68,7 @@ struct  ContentView: View {
             }, content: {
                 Text("$System_Sheet")
             })
-            .PF_Sheet(isPresented: $PF_Half_Sheet, capsulebarColor: Color.gray,backcornerRadius: 12) {
+            .PF_Sheet(isPresented: $PF_Half_Sheet, content: {
                 VStack{
                     ForEach(0..<12){ index in
                         HStack{
@@ -77,9 +79,10 @@ struct  ContentView: View {
                     }
                 }
                 .padding()
-            } background: {
-                Color.white
-            }
+            }, background: {
+                Color.red
+            })
+       
             
             .PF_Navilink(isPresented: $PF_Navilink, content: {
                 Text("PF_Navilink")
