@@ -61,9 +61,9 @@ struct PF_SheetView<Content,Back> : View where Content : View ,Back:View{
                     
                    
         }
-        
-        
     }
+
+    
     @ViewBuilder
     var back : some View{
         GeometryReader(content: { proxy in
