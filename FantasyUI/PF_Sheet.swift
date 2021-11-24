@@ -50,11 +50,16 @@ struct PF_SheetView<Content,Back> : View where Content : View ,Back:View{
         VStack
         {
             Spacer()
-            capsulebar
-            self.content()
-                .background(back)
-                .offset(y:offset > 0 ? offset : 0)
-                .gesture(gesture)
+            
+            Group {
+                capsulebar
+                content()
+                    .background(back)
+            }
+            .offset(y:offset > 0 ? offset : 0)
+            .gesture(gesture)
+                    
+                   
         }
         
         
@@ -91,8 +96,7 @@ extension View{
         
         
         
-        return  self
-            .overlay(
+        return  self.overlay(
                 ZStack{
                     Color.black.opacity(0.7).ignoresSafeArea()
                         .onTapGesture {
@@ -105,7 +109,7 @@ extension View{
                     
                     //抽屉
                     PF_SheetView(isPresented: isPresented,capsulebarColor: capsulebarColor, backcornerRadius: backcornerRadius, content: content, background: background)
-                        .ifshow(isPresented.wrappedValue, animation: .linear(duration: 0.4), transition: .move(edge: .bottom))
+                        .ifshow(isPresented.wrappedValue, animation: .spring(), transition: .move(edge: .bottom).animation(.spring()))
                 }
             )
         
