@@ -13,7 +13,10 @@ import Combine
 
 extension View {
     
-    
+    public func PF_Leading() -> some View {
+      return  self
+             .frame(maxWidth:.infinity,alignment: .leading)
+    }
    
     //MARK: 添加顶部模糊
     public func PF_Navitop<BACK,TOP>(style : NaviTopStyle ,showDivider : Bool = true, @ViewBuilder backgroundView: @escaping () -> BACK, @ViewBuilder TopCenterView: @escaping (() -> TOP)) -> some View where BACK : View ,TOP :View{

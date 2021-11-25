@@ -77,3 +77,57 @@ public enum NaviTopStyle {
     case inline
     case none
 }
+
+
+
+
+//一个异步加载的图像
+public struct PF_AsyncImage : View{
+    
+    var imageData : Data?
+    var uiimage : UIImage?
+    @State var image : Image?
+    
+    public init (_ imageData : Data){
+        self.imageData = imageData
+    }
+    public init (_ uiimage : UIImage){
+        self.uiimage = uiimage
+    }
+    
+    public var body: some View{
+        
+        Group{
+            if let image = image {
+                image
+                    .resizable()
+                    .transition(.opacity)
+            }else if let iamge  = uiimage{
+                    Image(uiImage: iamge)
+                        .resizable()
+                        .transition(.opacity)
+            }else{
+                ProgressView()
+                    .onAppear {
+                            dataToImage { image in
+                                withAnimation(.spring()){
+                                    self.image = image
+                                }
+                            }
+                    }
+            }
+        }
+    }
+    func dataToImage(completion: @escaping (Image)->()){
+        DispatchQueue.global().async {
+            if let imageData = imageData {
+                if let uiimage = UIImage(data: imageData){
+                    let image = Image(uiImage: uiimage)
+                    DispatchQueue.main.async {
+                        completion(image)
+                    }
+                }
+            }
+        }
+    }
+}
