@@ -70,3 +70,10 @@ public struct ICON: View {
     }
 }
 
+
+
+public enum NaviTopStyle {
+    case large
+    case inline
+    case none
+}

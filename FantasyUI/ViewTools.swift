@@ -14,6 +14,22 @@ import Combine
 extension View {
     
     
+   
+    //MARK: 添加顶部模糊
+    public func PF_Navitop<BACK,TOP>(style : NaviTopStyle ,showDivider : Bool = true, @ViewBuilder backgroundView: @escaping () -> BACK, @ViewBuilder TopCenterView: @escaping (() -> TOP)) -> some View where BACK : View ,TOP :View{
+            let height = style == .large ? TopSafeArea + 44 :  TopSafeArea
+         return self
+            .overlay(
+                backgroundView()
+                        .frame( height: height)
+                        .overlay(Divider().opacity(0.5).ifshow(showDivider),alignment: .bottom)
+                        .overlay(TopCenterView().padding(.bottom,6),alignment: .bottom)
+                        .MoveTo(.topCenter)
+                        .ignoresSafeArea()
+                        .ifshow(style != .none , animation: .spring(), transition: .move(edge: .top).animation(.spring()))
+            )
+           
+    }
     
     //MARK: 逻辑显示
     public func ifshow(_ show : Bool,  animation: Animation? = nil , transition: AnyTransition? = nil ) -> some View {
