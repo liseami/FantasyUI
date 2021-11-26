@@ -12,12 +12,12 @@ public struct PF_OffsetScrollView<Body> : View  where Body : View{
     
     
     @Binding var offset : CGFloat
+    var topPadding : Bool = true
     let content : ()-> Body
    
-    
-    
-    public init(offset:Binding<CGFloat>,content : @escaping ()-> Body) {
+    public init(offset:Binding<CGFloat>, topPadding : Bool = true, content : @escaping ()-> Body) {
         _offset = offset
+        self.topPadding = topPadding
         self.content = content
     }
     
@@ -27,11 +27,11 @@ public struct PF_OffsetScrollView<Body> : View  where Body : View{
     public var body: some View{
         
         ScrollView(.vertical, showsIndicators: false)  {
-            offsetDetector
-            
-            self.content()
-                .padding(.top,TopSafeArea + 44)
-            
+            VStack(spacing:0){
+                offsetDetector
+                self.content()
+            }
+            .padding(.top,topPadding ? TopSafeArea + 44 : 0)
             Spacer().frame(width: 0, height: SW)
         }
         .ignoresSafeArea()
@@ -60,7 +60,7 @@ public struct PF_OffsetScrollView<Body> : View  where Body : View{
 }
 
 
-struct PF_OffsetScrollView_OffsetScrollView_Previews: PreviewProvider {
+struct PF_OffsetScrollView_Previews: PreviewProvider {
     static var previews: some View {
         
         PF_OffsetScrollView(offset: .constant(32), content: {

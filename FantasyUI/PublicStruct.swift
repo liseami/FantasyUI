@@ -55,15 +55,17 @@ public struct ICON: View {
                     Image(name)
                         .resizable()
                         .renderingMode(.template)
+                        .foregroundColor(fcolor)
                         .scaledToFill()
                         .frame(width: size, height: size,alignment: .center)
                 }else{
                     Image(systemName: sysname!)
+                        .renderingMode(.template)
+                        .foregroundColor(fcolor)
                         .font(Font.system(size: size,weight: fontWeight))
                         .frame(width: size, height: size,alignment: .center)
                 }
             }
-            .foregroundColor(fcolor)
             .frame(alignment: .center)
         }
         .disabled(action == nil)
@@ -88,10 +90,10 @@ public struct PF_AsyncImage : View{
     var uiimage : UIImage?
     @State var image : Image?
     
-    public init (_ imageData : Data){
+    public init (_ imageData : Data?){
         self.imageData = imageData
     }
-    public init (_ uiimage : UIImage){
+    public init (_ uiimage : UIImage?){
         self.uiimage = uiimage
     }
     
