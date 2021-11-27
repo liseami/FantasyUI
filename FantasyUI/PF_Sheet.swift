@@ -93,7 +93,6 @@ extension View{
         
         
         return  self.overlay(
-                
                     Color.black.opacity(0.7).ignoresSafeArea()
                         .onTapGesture {
                             withAnimation(){

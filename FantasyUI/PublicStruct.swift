@@ -109,7 +109,7 @@ public struct PF_AsyncImage : View{
                         .resizable()
                         .transition(.opacity)
             }else{
-                ProgressView()
+                Color.gray.opacity(0.33)
                     .onAppear {
                             dataToImage { image in
                                 withAnimation(.spring()){
