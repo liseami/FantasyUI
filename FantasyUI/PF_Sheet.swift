@@ -91,10 +91,6 @@ extension View{
     public func PF_Sheet<Content,Back>(isPresented: Binding<Bool>, capsulebarColor : Color = .black,backcornerRadius:CGFloat = 32, @ViewBuilder content: @escaping () -> Content,@ViewBuilder background: @escaping () -> Back) -> some View where Content : View,Back:View{
 
         return  self.overlay(
-<<<<<<< HEAD
-=======
-            
->>>>>>> 600737b (commit)
                     Color.black.opacity(0.7).ignoresSafeArea()
                         .onTapGesture {
                             withAnimation(){
