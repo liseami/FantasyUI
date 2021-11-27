@@ -95,6 +95,25 @@ extension View {
     public func isPreview() -> some View{
         self.modifier(Preview())
     }
+    
+    
+    //MARK: 根据设备不同采取不同的行动
+    @ViewBuilder public func ifDeivceis<T>(_ condition: Bool, transform: (Self) -> T) -> some View where T: View {
+         if condition {
+             transform(self)
+         } else {
+             self
+         }
+     }
+
+     @ViewBuilder public func ifElse<T:View,V:View>( _ condition:Bool,isTransform:(Self) -> T,elseTransform:(Self) -> V) -> some View {
+         if condition {
+             isTransform(self)
+         } else {
+             elseTransform(self)
+         }
+     }
+    
 }
 
 

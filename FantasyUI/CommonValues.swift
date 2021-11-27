@@ -14,3 +14,23 @@ public let TopSafeArea = UIApplication.shared.windows.first?.safeAreaInsets.top 
 public let BottomSafeArea =  UIApplication.shared.windows.first?.safeAreaInsets.bottom ?? 0
 
 
+
+public enum Device {
+    //MARK:当前设备类型 iphone ipad mac
+    public enum Devicetype{
+        case iphone,ipad,mac
+    }
+    public static var deviceType : Devicetype{
+        #if os(macOS)
+        return .mac
+        #else
+        if  UIDevice.current.userInterfaceIdiom == .pad {
+            return .ipad
+        }
+        else {
+            return .iphone
+        }
+        #endif
+    }
+
+}
