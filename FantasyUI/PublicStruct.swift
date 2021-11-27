@@ -133,3 +133,40 @@ public struct PF_AsyncImage : View{
         }
     }
 }
+
+
+//MenuBtn
+public struct PF_MenuBtn : View {
+    let text : String
+    let sysname : String?
+    let name: String?
+    let action : ()-> Void
+    
+    public init(text:String ,sysname : String , action : @escaping ()->()){
+        self.text = text
+        self.sysname = sysname
+        self.action = action
+        self.name = nil
+    }
+    public init(text:String ,name : String , action : @escaping ()->()){
+        self.text = text
+        self.name = name
+        self.action = action
+        self.sysname = nil
+    }
+    public var body: some View {
+        return Button {
+            action()
+        } label: {
+            Label {
+                Text(text)
+            } icon: {
+                ICON(sysname: sysname ?? "")
+                    .ifshow(sysname != nil)
+                ICON(name: name ?? "" )
+                    .ifshow(name != nil)
+            }
+            
+        }
+    }
+}
