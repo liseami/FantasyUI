@@ -89,10 +89,12 @@ struct PF_SheetView<Content,Back> : View where Content : View ,Back:View{
 extension View{
     
     public func PF_Sheet<Content,Back>(isPresented: Binding<Bool>, capsulebarColor : Color = .black,backcornerRadius:CGFloat = 32, @ViewBuilder content: @escaping () -> Content,@ViewBuilder background: @escaping () -> Back) -> some View where Content : View,Back:View{
-        
-        
-        
+
         return  self.overlay(
+<<<<<<< HEAD
+=======
+            
+>>>>>>> 600737b (commit)
                     Color.black.opacity(0.7).ignoresSafeArea()
                         .onTapGesture {
                             withAnimation(){
@@ -105,7 +107,7 @@ extension View{
             )
             .overlay(        //抽屉
                 PF_SheetView(isPresented: isPresented,capsulebarColor: capsulebarColor, backcornerRadius: backcornerRadius, content: content, background: background)
-                    .ifshow(isPresented.wrappedValue, animation: .linear(duration: 0.2), transition: .move(edge: .bottom).animation(.linear(duration: 0.2))),alignment: .bottom)
+                    .ifshow(isPresented.wrappedValue, animation: .linear(duration: 0.5), transition: .move(edge: .bottom).animation(.linear(duration: 0.5))),alignment: .bottom)
     }
 }
 
@@ -120,29 +122,23 @@ struct PF_SheetViewExample: View {
                     .navigationTitle("The Big Blue")
             }
             Button {
-                show.toggle()
+                withAnimation(){
+                        show = true
+                }
             } label: {
                 Text("show Sheet")
             }
         }
         .PF_Sheet(isPresented: $show, capsulebarColor: .black) {
             VStack{
-                HStack{
-                    Spacer()
-                    Text("Hello,world")
-                    Spacer()
+                ForEach(0..<12){ index in
+                    HStack{
+                        Spacer()
+                        Text("Hello,world")
+                        Spacer()
+                    }
+                    .padding()
                 }
-                HStack{
-                    Spacer()
-                    Text("Hello,world")
-                    Spacer()
-                }
-                HStack{
-                    Spacer()
-                    Text("Hello,world")
-                    Spacer()
-                }
-                
             }
             
         } background: {

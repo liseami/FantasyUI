@@ -9,7 +9,7 @@ import SwiftUI
 
 
 struct  ContentView: View {
-    @State private var PF_Half_Sheet : Bool = false
+    @State private var PF_Sheet : Bool = false
     @State private var System_Sheet : Bool = false
     @State private var PF_Navilink : Bool  = false
     @State private var PF_FullScreen : Bool  = false
@@ -23,7 +23,7 @@ struct  ContentView: View {
                 Section {
                     Button("PF_Half_Sheet"){
                         withAnimation(.spring()){
-                            PF_Half_Sheet.toggle()
+                            self.PF_Sheet.toggle()
                         }
                     }
                     Button("System_Sheet"){
@@ -55,13 +55,16 @@ struct  ContentView: View {
                 }
                 
                 Section {
-                    VStack(alignment: .leading,spacing: 12){
-                        Button("Offset_ScrollView"){
-                            ShowOffset_ScrollView.toggle()
-                        }
+                    Menu {
+                        PF_MenuBtn(text: "square.and.pencil", sysname: "square.and.pencil") {}
+                        PF_MenuBtn(text: "scribble", sysname: "scribble") {}
+                        PF_MenuBtn(text: "rectangle.portrait.and.arrow.right", sysname: "rectangle.portrait.and.arrow.right") {}
+                        PF_MenuBtn(text: "square.and.arrow.down.on.square", sysname: "square.and.arrow.down.on.square") {}
+                    } label: {
+                        Text("PF_MenuBtn")
                     }
                 }header: {
-                    Text("PF_")
+                    Text("PF_MenuBtn")
                 }
                 
                 
@@ -69,11 +72,10 @@ struct  ContentView: View {
             .listStyle(.insetGrouped )
             .navigationTitle("PrueFantasy")
             .PF_SystemSheet(isPresented: $System_Sheet, onDismiss: {
-                
             }, content: {
                 Text("$System_Sheet")
             })
-            .PF_Sheet(isPresented: $PF_Half_Sheet, content: {
+            .PF_Sheet(isPresented: $PF_Sheet, content: {
                 VStack{
                     ForEach(0..<12){ index in
                         HStack{
@@ -85,7 +87,7 @@ struct  ContentView: View {
                 }
                 .padding()
             }, background: {
-                Color.red
+                Color.white
             })
             .PF_Navilink(isPresented: $PF_Navilink, content: {
                 VStack(spacing:12){
@@ -107,7 +109,6 @@ struct  ContentView: View {
                 }
             })
             .PF_FullScreen(isPresented: $PF_FullScreen) {
-                
             } content: {
                 Button("PF_FullScreen"){
                     PF_FullScreen.toggle()
