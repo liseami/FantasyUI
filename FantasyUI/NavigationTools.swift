@@ -31,15 +31,11 @@ extension SwiftUI.View {
          return GoBackground(
             ZStack{
                 Group{
-                    
-                    
-                    
                     NavigationLink(isActive: isPresented) {
                         content()
                     } label: {
                         EmptyView()
                     }
-                    
                     //解决自动弹出Bug
                     NavigationLink {
                         EmptyView()
