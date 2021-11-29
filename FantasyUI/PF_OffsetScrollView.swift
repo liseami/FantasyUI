@@ -26,15 +26,31 @@ public struct PF_OffsetScrollView<Body> : View  where Body : View{
     @ViewBuilder
     public var body: some View{
         
-        ScrollView(.vertical, showsIndicators: false)  {
-            VStack(spacing:0){
-                offsetDetector
-                self.content()
+        if topPadding {
+            ScrollView(.vertical, showsIndicators: false)  {
+                VStack(spacing:0){
+                    offsetDetector
+                    self.content()
+                        .padding(.top,44 + TopSafeArea)
+                }
+                
+                Spacer().frame(width: 0, height: SW)
             }
-            .padding(.top,topPadding ? TopSafeArea + 44 : 0)
-            Spacer().frame(width: 0, height: SW)
+            .ignoresSafeArea()
         }
-        .ignoresSafeArea()
+        else
+        {
+            ScrollView(.vertical, showsIndicators: false)  {
+                VStack(spacing:0){
+                    offsetDetector
+                    self.content()
+                }
+                
+                Spacer().frame(width: 0, height: SW)
+            }
+            .ignoresSafeArea()
+        }
+        
         
     }
     
@@ -48,10 +64,8 @@ public struct PF_OffsetScrollView<Body> : View  where Body : View{
                 self.offset = minY
             }
             return AnyView(
-                ZStack{
-                    Divider().opacity(0)
-                        .offset(y:(TopSafeArea))
-                }
+                    Divider()
+                    .opacity(0)
             )
         }
         .frame(height: 0)
