@@ -56,6 +56,7 @@ struct PF_SheetView<Content> : View where Content : View{
                         .clipShape(RoundedCorner(radius: backcornerRadius, corners: [.topLeft,.topRight]))
                         .frame( height: backcornerRadius, alignment: .center)
                     content()
+                        
                         .background(backColor.ignoresSafeArea())
                         .ignoresSafeArea()
                         .background(back)
@@ -93,7 +94,7 @@ struct PF_SheetView<Content> : View where Content : View{
 
 extension View{
     
-    public func PF_Sheet<Content>(isPresented: Binding<Bool>, capsulebarColor : Color = .black,backcornerRadius:CGFloat = 32,backColor : Color, @ViewBuilder content: @escaping () -> Content) -> some View where Content : View{
+    public func PF_Sheet<Content>(isPresented: Binding<Bool>, capsulebarColor : Color = .black,backcornerRadius:CGFloat = 32,backColor : Color, @ViewBuilder content:  @escaping () -> Content) -> some View where Content : View{
 
         return  self.overlay(
             Color.black.opacity(0.618).ignoresSafeArea()
@@ -103,13 +104,12 @@ extension View{
                                 isPresented.wrappedValue = false
                             }
                         }
-                        .ifshow(isPresented.wrappedValue,animation: .spring(), transition: .opacity)
-                
+                .ifshow(isPresented.wrappedValue,animation: .spring(), transition: .opacity)
+            
             )
             .overlay(        //抽屉
                 PF_SheetView(isPresented: isPresented,capsulebarColor: capsulebarColor, backcornerRadius: backcornerRadius,backColor: backColor, content: content)
-                
-                    .ifshow(isPresented.wrappedValue, animation: .spring(), transition: .offset(x: 0, y: SH)
+                    .ifshow(isPresented.wrappedValue,  animation: .spring(), transition: .offset(x: 0, y: SH)
                            )
                 
                 ,alignment: .bottom)
