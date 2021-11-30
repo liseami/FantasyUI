@@ -56,6 +56,7 @@ struct PF_SheetView<Content> : View where Content : View{
                         .clipShape(RoundedCorner(radius: backcornerRadius, corners: [.topLeft,.topRight]))
                         .frame( height: backcornerRadius, alignment: .center)
                     content()
+                        .background(backColor.ignoresSafeArea())
                         .ignoresSafeArea()
                         .background(back)
                 }
@@ -107,6 +108,7 @@ extension View{
             )
             .overlay(        //抽屉
                 PF_SheetView(isPresented: isPresented,capsulebarColor: capsulebarColor, backcornerRadius: backcornerRadius,backColor: backColor, content: content)
+                
                     .ifshow(isPresented.wrappedValue, animation: .spring(), transition: .offset(x: 0, y: SH)
                            )
                 

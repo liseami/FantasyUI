@@ -36,13 +36,17 @@ extension View {
     
     //MARK: 逻辑显示
     public func ifshow(_ show : Bool,  animation: Animation? = nil , transition: AnyTransition? = nil ) -> some View {
+        
         Group{
             if show{
-                 self
-                    .animation(animation)
+              self
+                    .animation(animation,value: show)
                     .transition(transition ?? .opacity)
             }
         }
+           
+        
+        
     }
     
     

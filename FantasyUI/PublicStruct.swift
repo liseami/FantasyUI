@@ -220,7 +220,11 @@ public struct PF_alert: View {
                 madasoft()
             })
             .ifshow(show, animation: .spring(), transition: .offset(x: 0, y: SH * -0.3))
-
+            .onChange(of: show) { newValue in
+                if newValue {DispatchQueue.main.asyncAfter(deadline: .now() + 1.6) {
+                    if newValue {show = false}
+                }}
+            }
     }
     
     @ViewBuilder
@@ -268,10 +272,6 @@ public struct PF_alert: View {
         .simultaneousGesture(TapGesture().onEnded({ _ in
             self.show = false
         }))
-        .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.6) {
-                if show {show = false}
-            }
-        }
+       
     }
 }
