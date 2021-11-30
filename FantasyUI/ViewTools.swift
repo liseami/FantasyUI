@@ -37,12 +37,11 @@ extension View {
     //MARK: 逻辑显示
     public func ifshow(_ show : Bool,  animation: Animation? = nil , transition: AnyTransition? = nil ) -> some View {
         Group{
-            if show
-                {
-                       self
-                    .animation(animation, value: show)
-                            .transition(transition ?? .opacity)
-                }
+            if show{
+                 self
+                    .animation(animation)
+                    .transition(transition ?? .opacity)
+            }
         }
     }
     
@@ -113,6 +112,13 @@ extension View {
              elseTransform(self)
          }
      }
+    
+    public func PF_Alert(text: String ,color : Color , textcolor : Color = .black , show : Binding<Bool> ,alignment : Alignment = .top ,style:PF_alert.AlertStyle = .cancel ) -> some View {
+        self
+            .overlay(
+                PF_alert(text: text, color: color, textcolor: textcolor, show: show, style : style),
+                alignment:alignment)
+    }
     
 }
 

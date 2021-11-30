@@ -49,6 +49,7 @@ public func showShareAppSheet(shareitems : [Any]){
     if let topController = UIApplication.topViewController() {
         let activityController = UIActivityViewController(activityItems: shareitems, applicationActivities: nil)
         topController.present(activityController, animated: true, completion: nil)
+    
     }
 }
 

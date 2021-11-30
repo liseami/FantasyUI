@@ -20,7 +20,7 @@ public struct RoundedCorner: Shape {
 }
 
 
-///图标
+//MARK: 图标
 public struct ICON: View {
     var sysname : String?
     var name : String = ""
@@ -69,6 +69,7 @@ public struct ICON: View {
             .frame(alignment: .center)
         }
         .disabled(action == nil)
+        .animation(.spring())
     }
 }
 
@@ -83,7 +84,7 @@ public enum NaviTopStyle {
 
 
 
-//一个异步加载的图像
+//MARK: 一个异步加载的图像
 public struct PF_AsyncImage : View{
     
     var imageData : Data?
@@ -135,7 +136,7 @@ public struct PF_AsyncImage : View{
 }
 
 
-//MenuBtn
+//MARK: MenuBtn
 public struct PF_MenuBtn : View {
     let text : String
     let sysname : String?
@@ -167,6 +168,125 @@ public struct PF_MenuBtn : View {
                     .ifshow(name != nil)
             }
             
+        }
+    }
+}
+
+
+
+
+public struct PF_alert: View {
+    
+    
+    public enum AlertStyle {
+        case cancel
+        case success
+        case wrong
+    }
+    
+    
+    @Binding var show : Bool
+    @GestureState var offset : CGFloat = 0
+    
+    
+    var style : AlertStyle = .cancel
+    var text : String = "PF_Alert"
+    var color : Color = .black
+    var textcolor : Color = .black
+   
+   
+    
+    public init(text: String ,color : Color , textcolor : Color = .black , show : Binding<Bool> ,style:AlertStyle = .cancel ){
+        _show = show
+        self.text = text
+        self.color = color
+        
+        self.style  = style
+    }
+    
+    public var body: some View {
+        
+//        Group{
+//            if show {
+//
+//                if #available(iOS 15.0, *) {
+//
+//
+//                }else{
+//                    Alert
+//                        .transition(.move(edge: .top))
+//                        .animation(.spring())
+//                }
+//
+//            }
+//        }
+        
+//        Group{
+//            if show
+//            {
+//                Alert
+//                    .transition(.move(edge: .top))
+//                    .animation(.spring())
+//
+//            }
+//        }
+//
+        Alert
+            .ifshow(show, animation: .spring(), transition: .offset(x: 0, y: SH * -0.3))
+////
+           
+         
+    }
+    
+    @ViewBuilder
+    
+    var Alert : some View {
+        
+        let gesture = DragGesture(minimumDistance: 12, coordinateSpace: .global)
+            .updating($offset) { value, out, transition in
+                let height = value.translation.height
+                out = height
+            }
+            .onEnded { value in
+                show.toggle()
+            }
+        
+            HStack(spacing:12){
+                ICON(sysname: "checkmark.circle.fill", fcolor: color, size: 16, action: {
+                    show.toggle()})
+                    .ifshow(style == .success)
+                ICON(sysname: "exclamationmark.circle.fill", fcolor: color, size: 16, action: {
+                    show.toggle()})
+                    .ifshow(style == .wrong)
+            Text(LocalizedStringKey(text))
+                .font(.system(size: 17, weight: .light, design: .rounded))
+                .foregroundColor(textcolor)
+            Spacer()
+                ICON(sysname: "xmark", fcolor: color, size: 16, action: {
+                    self.show = false
+                })
+                    .ifshow(style == .cancel)
+            }
+        .padding()
+        .background(
+            ZStack{
+                Color.white
+                color.opacity(0.1)}
+           )
+        .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+        .overlay(RoundedRectangle(cornerRadius: 12, style: .continuous).stroke(lineWidth: 0.6).foregroundColor(color))
+        .shadow(color: color.opacity(0.1), radius: 12, x: 0, y:3)
+        .shadow(color: Color.black.opacity(0.03), radius: 24 , x: 0, y: 6)
+        .padding()
+        .gesture(gesture)
+        .offset(y:offset)
+        .simultaneousGesture(TapGesture().onEnded({ _ in
+            self.show = false
+        }))
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.6) {
+                if show {show = false}
+            }
         }
     }
 }

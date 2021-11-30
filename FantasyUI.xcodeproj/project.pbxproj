@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		5A1D50212747DF9600A2CCB9 /* FantasyUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A1D50162747DF9600A2CCB9 /* FantasyUI.framework */; };
 		5A1D50262747DF9600A2CCB9 /* FantasyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1D50252747DF9600A2CCB9 /* FantasyUITests.swift */; };
+		5A51192A2755CA36004DC28D /* NavigationTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9C011274CD9BC00D97A8E /* NavigationTools.swift */; };
+		5A51192B2755CA36004DC28D /* PF_Sheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9C012274CD9BC00D97A8E /* PF_Sheet.swift */; };
+		5A51192C2755CA36004DC28D /* PublicStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9C017274CD9BC00D97A8E /* PublicStruct.swift */; };
+		5A51192D2755CA36004DC28D /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9C015274CD9BC00D97A8E /* ViewModifiers.swift */; };
+		5A51192E2755CA36004DC28D /* PF_OffsetScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9C014274CD9BC00D97A8E /* PF_OffsetScrollView.swift */; };
+		5A51192F2755CA36004DC28D /* SystemTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9C013274CD9BC00D97A8E /* SystemTools.swift */; };
+		5A5119302755CA36004DC28D /* ViewTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9C00E274CD9BC00D97A8E /* ViewTools.swift */; };
+		5A5119312755CA36004DC28D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9C02B274CD9D700D97A8E /* Extensions.swift */; };
 		5A716FF9274CE733002241D3 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A716FE6274CE733002241D3 /* Random.swift */; };
 		5A716FFA274CE733002241D3 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A716FE6274CE733002241D3 /* Random.swift */; };
 		5A716FFB274CE733002241D3 /* AverageColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A716FE7274CE733002241D3 /* AverageColor.swift */; };
@@ -45,26 +53,18 @@
 		5A71701A274CE733002241D3 /* CMYK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A716FF8274CE733002241D3 /* CMYK.swift */; };
 		5A71701B274CE733002241D3 /* CMYK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A716FF8274CE733002241D3 /* CMYK.swift */; };
 		5AA9C018274CD9BC00D97A8E /* ViewTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9C00E274CD9BC00D97A8E /* ViewTools.swift */; };
-		5AA9C019274CD9BC00D97A8E /* ViewTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9C00E274CD9BC00D97A8E /* ViewTools.swift */; };
 		5AA9C01A274CD9BC00D97A8E /* FantasyUI.md in Resources */ = {isa = PBXBuildFile; fileRef = 5AA9C00F274CD9BC00D97A8E /* FantasyUI.md */; };
 		5AA9C01B274CD9BC00D97A8E /* FantasyUI.md in Resources */ = {isa = PBXBuildFile; fileRef = 5AA9C00F274CD9BC00D97A8E /* FantasyUI.md */; };
 		5AA9C01C274CD9BC00D97A8E /* FantasyUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 5AA9C010274CD9BC00D97A8E /* FantasyUI.h */; };
 		5AA9C01D274CD9BC00D97A8E /* NavigationTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9C011274CD9BC00D97A8E /* NavigationTools.swift */; };
-		5AA9C01E274CD9BC00D97A8E /* NavigationTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9C011274CD9BC00D97A8E /* NavigationTools.swift */; };
 		5AA9C01F274CD9BC00D97A8E /* PF_Sheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9C012274CD9BC00D97A8E /* PF_Sheet.swift */; };
-		5AA9C020274CD9BC00D97A8E /* PF_Sheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9C012274CD9BC00D97A8E /* PF_Sheet.swift */; };
 		5AA9C021274CD9BC00D97A8E /* SystemTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9C013274CD9BC00D97A8E /* SystemTools.swift */; };
-		5AA9C022274CD9BC00D97A8E /* SystemTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9C013274CD9BC00D97A8E /* SystemTools.swift */; };
 		5AA9C023274CD9BC00D97A8E /* PF_OffsetScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9C014274CD9BC00D97A8E /* PF_OffsetScrollView.swift */; };
-		5AA9C024274CD9BC00D97A8E /* PF_OffsetScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9C014274CD9BC00D97A8E /* PF_OffsetScrollView.swift */; };
 		5AA9C025274CD9BC00D97A8E /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9C015274CD9BC00D97A8E /* ViewModifiers.swift */; };
-		5AA9C026274CD9BC00D97A8E /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9C015274CD9BC00D97A8E /* ViewModifiers.swift */; };
 		5AA9C027274CD9BC00D97A8E /* CommonValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9C016274CD9BC00D97A8E /* CommonValues.swift */; };
 		5AA9C028274CD9BC00D97A8E /* CommonValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9C016274CD9BC00D97A8E /* CommonValues.swift */; };
 		5AA9C029274CD9BC00D97A8E /* PublicStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9C017274CD9BC00D97A8E /* PublicStruct.swift */; };
-		5AA9C02A274CD9BC00D97A8E /* PublicStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9C017274CD9BC00D97A8E /* PublicStruct.swift */; };
 		5AA9C02C274CD9D700D97A8E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9C02B274CD9D700D97A8E /* Extensions.swift */; };
-		5AA9C02D274CD9D700D97A8E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9C02B274CD9D700D97A8E /* Extensions.swift */; };
 		5AA9C032274CDA1900D97A8E /* FantasyUI.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 5AA9C031274CDA1900D97A8E /* FantasyUI.podspec */; };
 		5AA9C033274CDA1900D97A8E /* FantasyUI.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 5AA9C031274CDA1900D97A8E /* FantasyUI.podspec */; };
 		5AF0B67727491F270067C843 /* ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF0B67627491F270067C843 /* ExampleApp.swift */; };
@@ -443,16 +443,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A51192C2755CA36004DC28D /* PublicStruct.swift in Sources */,
 				5A717000274CE733002241D3 /* RGB.swift in Sources */,
 				5AF0B68327491F280067C843 /* Example.xcdatamodeld in Sources */,
-				5AA9C02A274CD9BC00D97A8E /* PublicStruct.swift in Sources */,
 				5AF0B68027491F280067C843 /* Persistence.swift in Sources */,
-				5AA9C022274CD9BC00D97A8E /* SystemTools.swift in Sources */,
 				5AF0B67927491F270067C843 /* ContentView.swift in Sources */,
 				5AF0B67727491F270067C843 /* ExampleApp.swift in Sources */,
 				5A717017274CE733002241D3 /* ColorPalette.swift in Sources */,
 				5A716FFA274CE733002241D3 /* Random.swift in Sources */,
-				5AA9C026274CD9BC00D97A8E /* ViewModifiers.swift in Sources */,
 				5A717015274CE733002241D3 /* RelativeLuminance.swift in Sources */,
 				5A717009274CE733002241D3 /* UIImageExtensions.swift in Sources */,
 				5A717003274CE733002241D3 /* Lab.swift in Sources */,
@@ -460,19 +458,21 @@
 				5A717007274CE733002241D3 /* CGSizeExtensions.swift in Sources */,
 				5A717005274CE733002241D3 /* CGFloatExtensions.swift in Sources */,
 				5A717013274CE733002241D3 /* Difference.swift in Sources */,
-				5AA9C020274CD9BC00D97A8E /* PF_Sheet.swift in Sources */,
-				5AA9C02D274CD9D700D97A8E /* Extensions.swift in Sources */,
-				5AA9C019274CD9BC00D97A8E /* ViewTools.swift in Sources */,
-				5AA9C01E274CD9BC00D97A8E /* NavigationTools.swift in Sources */,
 				5A71701B274CE733002241D3 /* CMYK.swift in Sources */,
 				5AA9C028274CD9BC00D97A8E /* CommonValues.swift in Sources */,
 				5A717019274CE733002241D3 /* ContrastRatio.swift in Sources */,
 				5A71700F274CE733002241D3 /* ComplementaryColor.swift in Sources */,
 				5A716FFC274CE733002241D3 /* AverageColor.swift in Sources */,
 				5A71700D274CE733002241D3 /* DominantColors.swift in Sources */,
-				5AA9C024274CD9BC00D97A8E /* PF_OffsetScrollView.swift in Sources */,
 				5A71700B274CE733002241D3 /* Name.swift in Sources */,
 				5A716FFE274CE733002241D3 /* XYZ.swift in Sources */,
+				5A51192D2755CA36004DC28D /* ViewModifiers.swift in Sources */,
+				5A51192A2755CA36004DC28D /* NavigationTools.swift in Sources */,
+				5A5119312755CA36004DC28D /* Extensions.swift in Sources */,
+				5A51192B2755CA36004DC28D /* PF_Sheet.swift in Sources */,
+				5A51192F2755CA36004DC28D /* SystemTools.swift in Sources */,
+				5A5119302755CA36004DC28D /* ViewTools.swift in Sources */,
+				5A51192E2755CA36004DC28D /* PF_OffsetScrollView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -737,7 +737,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pruefantasy.Example;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Example;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -767,7 +767,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pruefantasy.Example;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Example;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
