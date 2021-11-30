@@ -103,7 +103,7 @@ extension View{
             )
             .overlay(        //抽屉
                 PF_SheetView(isPresented: isPresented,capsulebarColor: capsulebarColor, backcornerRadius: backcornerRadius, content: content, background: background)
-                    .ifshow(isPresented.wrappedValue, animation: .linear(duration: 0.5), transition: .move(edge: .bottom).animation(.linear(duration: 0.5))),alignment: .bottom)
+                    .ifshow(isPresented.wrappedValue, animation: .spring(), transition: .move(edge: .bottom)),alignment: .bottom)
     }
 }
 

@@ -69,7 +69,6 @@ public struct ICON: View {
             .frame(alignment: .center)
         }
         .disabled(action == nil)
-        .animation(.spring())
     }
 }
 
@@ -206,36 +205,22 @@ public struct PF_alert: View {
     
     public var body: some View {
         
-//        Group{
-//            if show {
-//
-//                if #available(iOS 15.0, *) {
-//
-//
-//                }else{
-//                    Alert
-//                        .transition(.move(edge: .top))
-//                        .animation(.spring())
-//                }
-//
-//            }
-//        }
-        
-//        Group{
-//            if show
-//            {
-//                Alert
-//                    .transition(.move(edge: .top))
-//                    .animation(.spring())
-//
-//            }
-//        }
-//
         Alert
+            .onAppear(perform: {
+                switch style {
+                case .cancel:
+                     madasoft()
+                case .success:
+                    madaSuccess()
+                case .wrong:
+                    madaWarning()
+                }
+            })
+            .onDisappear(perform: {
+                madasoft()
+            })
             .ifshow(show, animation: .spring(), transition: .offset(x: 0, y: SH * -0.3))
-////
-           
-         
+
     }
     
     @ViewBuilder
