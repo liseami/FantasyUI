@@ -7,25 +7,25 @@
 
 import SwiftUI
 
-struct PF_SheetView<Content,Back> : View where Content : View ,Back:View{
+struct PF_SheetView<Content> : View where Content : View{
     @Environment(\.colorScheme) var colorScheme
     let content : ()->Content
-    let background : ()->Back
+
     
     @GestureState var offset : CGFloat = 0
     @State private var bodyHeight : CGFloat = 0
     @Binding var show : Bool
     var capsulebarColor : Color = .black
     var backcornerRadius : CGFloat = 32
+    var backColor : Color = .white
     
-    init(isPresented : Binding<Bool>,capsulebarColor : Color = .black , backcornerRadius : CGFloat = 32, content:@escaping ()-> Content,background:@escaping ()-> Back)
+    init(isPresented : Binding<Bool>,capsulebarColor : Color = .black , backcornerRadius : CGFloat = 32, backColor : Color, content:@escaping ()-> Content)
     {
         _show = isPresented
         self.content = content
-        self.background = background
         self.capsulebarColor = capsulebarColor
         self.backcornerRadius = backcornerRadius
-        
+        self.backColor = backColor
     }
     
     @ViewBuilder
@@ -46,13 +46,20 @@ struct PF_SheetView<Content,Back> : View where Content : View ,Back:View{
                 }
             })
         
-        
         VStack
         {
             Group {
                 capsulebar
-                content()
-                    .background(back)
+                VStack(spacing:0){
+                    Rectangle()
+                        .fill(backColor)
+                        .clipShape(RoundedCorner(radius: backcornerRadius, corners: [.topLeft,.topRight]))
+                        .frame( height: backcornerRadius, alignment: .center)
+                    content()
+                        .ignoresSafeArea()
+                        .background(back)
+                }
+               
             }
             .offset(y:offset > 0 ? offset : 0)
             .gesture(gesture)
@@ -63,10 +70,7 @@ struct PF_SheetView<Content,Back> : View where Content : View ,Back:View{
     @ViewBuilder
     var back : some View{
         GeometryReader(content: { proxy in
-            background()
-                .frame(width: SW)
-                .clipShape(RoundedCorner(radius: backcornerRadius, corners: [.topLeft,.topRight]))
-                .ignoresSafeArea()
+            Color.clear
                 .onAppear {
                     self.bodyHeight = proxy.size.height
                 }
@@ -88,10 +92,10 @@ struct PF_SheetView<Content,Back> : View where Content : View ,Back:View{
 
 extension View{
     
-    public func PF_Sheet<Content,Back>(isPresented: Binding<Bool>, capsulebarColor : Color = .black,backcornerRadius:CGFloat = 32, @ViewBuilder content: @escaping () -> Content,@ViewBuilder background: @escaping () -> Back) -> some View where Content : View,Back:View{
+    public func PF_Sheet<Content>(isPresented: Binding<Bool>, capsulebarColor : Color = .black,backcornerRadius:CGFloat = 32,backColor : Color, @ViewBuilder content: @escaping () -> Content) -> some View where Content : View{
 
         return  self.overlay(
-                    Color.black.opacity(0.7).ignoresSafeArea()
+            Color.black.opacity(0.618).ignoresSafeArea()
                         .onTapGesture {
                             withAnimation(){
                                 madasoft()
@@ -102,8 +106,11 @@ extension View{
                 
             )
             .overlay(        //抽屉
-                PF_SheetView(isPresented: isPresented,capsulebarColor: capsulebarColor, backcornerRadius: backcornerRadius, content: content, background: background)
-                    .ifshow(isPresented.wrappedValue, animation: .spring(), transition: .move(edge: .bottom)),alignment: .bottom)
+                PF_SheetView(isPresented: isPresented,capsulebarColor: capsulebarColor, backcornerRadius: backcornerRadius,backColor: backColor, content: content)
+                    .ifshow(isPresented.wrappedValue, animation: .spring(), transition: .offset(x: 0, y: SH)
+                           )
+                
+                ,alignment: .bottom)
     }
 }
 
@@ -125,7 +132,7 @@ struct PF_SheetViewExample: View {
                 Text("show Sheet")
             }
         }
-        .PF_Sheet(isPresented: $show, capsulebarColor: .black) {
+        .PF_Sheet(isPresented: $show, capsulebarColor: .black,backColor: .black) {
             VStack{
                 ForEach(0..<12){ index in
                     HStack{
@@ -136,9 +143,8 @@ struct PF_SheetViewExample: View {
                     .padding()
                 }
             }
+            .background(Color.red)
             
-        } background: {
-            Color.red
         }
         
     }

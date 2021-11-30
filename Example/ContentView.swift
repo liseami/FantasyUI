@@ -57,8 +57,8 @@ struct  ContentView: View {
                         }
                         
                         Menu {
-                            PF_MenuBtn(text: "square.and.pencil", sysname: "square.and.pencil") {}
                             PF_MenuBtn(text: "scribble", sysname: "scribble") {}
+                            PF_MenuBtn(text: "square.and.pencil", sysname: "square.and.pencil") {}
                             PF_MenuBtn(text: "rectangle.portrait.and.arrow.right", sysname: "rectangle.portrait.and.arrow.right") {}
                             PF_MenuBtn(text: "square.and.arrow.down.on.square", sysname: "square.and.arrow.down.on.square") {}
                         } label: {
@@ -80,7 +80,7 @@ struct  ContentView: View {
                 }, content: {
                     Text("$System_Sheet")
                 })
-                .PF_Sheet(isPresented: $PF_Sheet, content: {
+                .PF_Sheet(isPresented: $PF_Sheet,backColor: .red, content: {
                     VStack{
                         ForEach(0..<12){ index in
                             HStack{
@@ -91,8 +91,7 @@ struct  ContentView: View {
                         }
                     }
                     .padding()
-                }, background: {
-                    Color.white
+                    .background(Color.red)
                 })
                
                 
