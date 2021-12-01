@@ -26,7 +26,7 @@ extension UIColor {
         /// Do not use these two colors as text / background.
         case low(CGFloat)
         
-        init(value: CGFloat) {
+        public init(value: CGFloat) {
             if value >= 4.5 {
                 self = .acceptable(value)
             } else if value >= 3.0 {
@@ -36,7 +36,7 @@ extension UIColor {
             }
         }
         
-        var associatedValue: CGFloat {
+        public  var associatedValue: CGFloat {
             switch self {
             case .acceptable(let value),
                  .acceptableForLargeText(let value),

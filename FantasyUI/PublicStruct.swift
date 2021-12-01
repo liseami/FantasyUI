@@ -29,7 +29,7 @@ public struct ICON: View {
     var fontWeight : Font.Weight = .regular
     var action : (()-> Void)?
     
-    public init(sysname : String,fcolor : Color = .black ,size : CGFloat = 24,fontWeight: Font.Weight = .regular ,action : (()-> Void)? = nil ){
+    public init(sysname : String,fcolor : Color = .black ,size : CGFloat = 16,fontWeight: Font.Weight = .regular ,action : (()-> Void)? = nil ){
         self.sysname = sysname
         self.fcolor = fcolor
         self.size = size
@@ -274,4 +274,24 @@ public struct PF_alert: View {
         }))
        
     }
+}
+
+
+public struct ClearFullScreenBackView: UIViewRepresentable {
+
+    public func makeUIView(context: Context) -> UIView {
+       let view = UIView()
+       DispatchQueue.main.async {
+           //superview = BackgroundCleanerView
+           //superview = UIHostingView
+           let superView = view.superview?.superview
+           superView?.backgroundColor = .clear
+           superView?.layer.shadowColor = UIColor.clear.cgColor
+           superView?.layer.shadowRadius = 0
+           superView?.layer.shadowOpacity = 0
+       }
+       return view
+   }
+   
+    public func updateUIView(_ uiView: UIView, context: Context) {}
 }

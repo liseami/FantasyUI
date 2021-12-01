@@ -61,11 +61,17 @@ extension SwiftUI.View {
     
     ///封装系统FullScreen
     ///解决iOS14.4出现的单一响应问题：一个View多个Sheet只有最后一个响应
-     public func PF_FullScreen<Content>(isPresented: Binding<Bool>,  onDismiss: (()->Void)?, content: @escaping () -> Content) -> some View where Content : View{
+    public func PF_FullScreen<Content>(isPresented: Binding<Bool>, backClear : Bool = false,  onDismiss: (()->Void)?, content: @escaping () -> Content) -> some View where Content : View{
          return GoBackground(Text("金诚所至，金石为开")
                         .opacity(0)
                         .fullScreenCover(isPresented: isPresented, onDismiss: onDismiss, content: {
-                            content()
+             if backClear {
+                 content()
+                     .background(ClearFullScreenBackView())
+             }else{
+                 content()
+             }
+                    
                         }))
         
     }
