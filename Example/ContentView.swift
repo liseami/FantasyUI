@@ -8,7 +8,29 @@
 import SwiftUI
 
 
-struct  ContentView: View {
+struct ListRow : View{
+    let name : String
+    var note : String? = nil
+    let action : ()->()
+    
+    var body: some View{
+        VStack(alignment: .leading,spacing: 4){
+            Button(name){
+                withAnimation(.spring()){
+                    action()
+                }
+            }
+            if let note = note {
+                Text(note)
+                    .font(.system(size: 12, weight: .light, design: .rounded))
+                
+            }
+        }
+        .padding(.vertical,6)
+    }
+}
+struct ContentView: View {
+    
     @State private var PF_Sheet : Bool = false
     @State private var System_Sheet : Bool = false
     @State private var PF_Navilink : Bool  = false
@@ -18,43 +40,55 @@ struct  ContentView: View {
     @State private var offset : CGFloat = 0
     @State private var showAlert : Bool = false
     @State private var refundRequestSheet : Bool  = false
+    @State private var PF_Sheet_SystemSheetStyle : Bool = false
+    
     var body: some View {
         
         ZStack {
             NavigationView {
                 List {
                     Section {
-                        Button("PF_Half_Sheet"){
-                            withAnimation(.spring()){
-                                self.PF_Sheet.toggle()
-                            }
+                        
+                        
+                        ListRow(name: "PF_Sheet", note: "基础款底部Sheet") {
+                            self.PF_Sheet.toggle()
                         }
-                        Button("System_Sheet"){
+                        
+                        ListRow(name: "PF_Sheet_SystemSheetStyle", note: "模仿iOS后页后仰的Sheet") {
+                            self.PF_Sheet_SystemSheetStyle.toggle()
+                        }
+                        
+                        ListRow(name: "System_Sheet") {
                             System_Sheet.toggle()
                         }
+                        
+                        
                     }header: {
                         Text("Sheet")
                     }
                     
                     Section {
-                        Button("PF_Navilink"){
+                        
+                        ListRow(name: "PF_Navilink") {
                             PF_Navilink.toggle()
                         }
-                        Button("PF_FullScreen"){
+                        
+                        ListRow(name: "PF_FullScreen") {
                             PF_FullScreen.toggle()
                         }
+                        
+                        
                     }header: {
                         Text("System_Tool")
                     }
                     
                     Section("组件") {
-                        VStack(alignment: .leading,spacing: 12){
-                                Button("Offset_ScrollView"){
-                                    ShowOffset_ScrollView.toggle()
-                                }
-                            Text("可捕获下拉距离的ScrollView")
-                                .font(.system(size: 12, weight: .light, design: .rounded))
+                        
+                        ListRow(name: "Offset_ScrollView",note:"可捕获下拉距离的ScrollView") {
+                            PF_FullScreen.toggle()
                         }
+                        
+                        
                         
                         Menu {
                             PF_MenuBtn(text: "scribble", sysname: "scribble") {}
@@ -66,35 +100,44 @@ struct  ContentView: View {
                                 .PF_Leading()
                         }
                         
-                        Button("PF_Alert") {
+                        ListRow(name: "PF_Alert") {
                             showAlert.toggle()
                         }
                         
-                        
                     }
                 }
-               
+                
                 .listStyle(.insetGrouped )
-                .navigationTitle("PrueFantasy")
+                .navigationTitle("FantasyUI")
                 .PF_SystemSheet(isPresented: $System_Sheet, onDismiss: {
                 }, content: {
                     Text("$System_Sheet")
                 })
-                .PF_Sheet(isPresented: $PF_Sheet,backColor: .red, content: {
+                .PF_Sheet(isPresented: $PF_Sheet,capsulebarColor: .gray, backColor: .white, content: {
                     VStack{
                         ForEach(0..<12){ index in
                             HStack{
                                 Spacer()
-                                Text("$PF_Half_Sheet")
+                                Text("$PF_Sheet")
                                 Spacer()
                             }
                         }
                     }
                     .padding()
-                    .background(Color.red)
                 })
-               
                 
+                .PF_Sheet_SystemSheetStyle(isPresented: $PF_Sheet_SystemSheetStyle, backColor: .white, content: {
+                    VStack{
+                        ForEach(0..<12){ index in
+                            HStack{
+                                Spacer()
+                                Text("$PF_Sheet_SystemSheetStyle")
+                                Spacer()
+                            }
+                        }
+                    }
+                    .padding()
+                })
                 .PF_Navilink(isPresented: $PF_Navilink, content: {
                     VStack(spacing:12){
                         ForEach(0..<12){index in
@@ -124,13 +167,13 @@ struct  ContentView: View {
                             showAlert.toggle()
                         }
                     }
-                   
+                    
                 }
             }
         }
         .PF_Alert(text: "FantasyUI通知", color: .black, textcolor: .blue, show: $showAlert,  style: .cancel)
         
-      
+        
         
         
         
@@ -145,22 +188,4 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 
-extension UIApplication {
-    open var currentKeyWindow: UIWindow? {
-    UIApplication.shared.connectedScenes
-      .filter { $0.activationState == .foregroundActive }
-      .map { $0 as? UIWindowScene }
-      .compactMap { $0 }
-      .first?.windows
-      .filter { $0.isKeyWindow }
-      .first
-  }
 
-    open var rootViewController: UIViewController? {
-    currentKeyWindow?.rootViewController
-  }
-
-//    open var inputViewController: UIViewController? {
-//      currentKeyWindow?.inputViewController
-//  }
-}

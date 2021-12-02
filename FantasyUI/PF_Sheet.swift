@@ -8,29 +8,32 @@
 import SwiftUI
 
 struct PF_SheetView<Content> : View where Content : View{
-    @Environment(\.colorScheme) var colorScheme
+    
     let content : ()->Content
-
+    
+    @Binding var isPresented : Bool
     
     @GestureState var offset : CGFloat = 0
     @State private var bodyHeight : CGFloat = 0
-    @Binding var show : Bool
+    @State private var endoffset : CGFloat = 0
+    @State private var showBackBlack : Bool = false
     var capsulebarColor : Color = .black
     var backcornerRadius : CGFloat = 32
     var backColor : Color = .white
+    var isSheetStyle : Bool = false
     
-    init(isPresented : Binding<Bool>,capsulebarColor : Color = .black , backcornerRadius : CGFloat = 32, backColor : Color, content:@escaping ()-> Content)
+    init(isPresented : Binding<Bool>,capsulebarColor : Color = .black , backcornerRadius : CGFloat = 32, backColor : Color,isSheetStyle : Bool = false, content:@escaping ()-> Content)
     {
-        _show = isPresented
-        self.content = content
         self.capsulebarColor = capsulebarColor
         self.backcornerRadius = backcornerRadius
         self.backColor = backColor
+        self.content = content
+        self.isSheetStyle = isSheetStyle
+        _isPresented = isPresented
     }
     
     @ViewBuilder
     var body: some View {
-        
         
         //手势
         let gesture = DragGesture(minimumDistance: 4, coordinateSpace: CoordinateSpace.global)
@@ -38,36 +41,74 @@ struct PF_SheetView<Content> : View where Content : View{
                 out = value.translation.height
             })
             .onEnded({ value in
-                if value.translation.height > (bodyHeight * 0.2){
+                if value.translation.height > (bodyHeight * 0.33){
                     madasoft()
-                    withAnimation(.spring()){
-                        show = false
-                    }
+                    showBackBlack = false
+                        endoffset = value.translation.height
+                        withAnimation(.spring()){
+                            isPresented = false
+                        }
+
+                 
                 }
             })
         
-        VStack
-        {
-            Group {
-                capsulebar
-                VStack(spacing:0){
-                    Rectangle()
-                        .fill(backColor)
-                        .clipShape(RoundedCorner(radius: backcornerRadius, corners: [.topLeft,.topRight]))
-                        .frame( height: backcornerRadius, alignment: .center)
-                    content()
-                        
-                        .background(backColor.ignoresSafeArea())
-                        .ignoresSafeArea()
-                        .background(back)
+        ZStack{
+            if !isSheetStyle{
+                (showBackBlack ? Color.black  : Color.white)
+                    .opacity(0.6)
+                    .ignoresSafeArea()
+                    .onTapGesture {
+                        madasoft()
+                        showBackBlack = false
+                        DispatchQueue.main.async {
+                            isPresented.toggle()
+                        }
+                    }
+                    .ifshow(showBackBlack)
+            }else{
+                Button {
+                    withAnimation(){
+                        madasoft()
+                        isPresented.toggle()
+                    }
+                } label: {
+                    Color.white.opacity(0).ignoresSafeArea()
                 }
-               
             }
-            .offset(y:offset > 0 ? offset : 0)
-            .gesture(gesture)
+            
+            VStack
+            {
+                Spacer()
+                Group {
+                    capsulebar
+                    VStack(spacing:0){
+                        content()
+                            .background(backColor
+                                            .clipShape(RoundedCorner(radius: backcornerRadius, corners: [.topLeft,.topRight]))
+                                            .ignoresSafeArea())
+                            .ignoresSafeArea()
+                            .background(back)
+                    }
+                }
+                .animation(.spring(),value: offset)
+                .offset(y:offset > 0 ? offset : 0)
+                .offset(y: offset == 0 ? endoffset : 0)
+                .gesture(gesture)
+                .ignoresSafeArea()
+                
+            }
+            .onAppear {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.34) {
+                    withAnimation(.spring()){
+                        showBackBlack = true
+                    }
+                }
+            }
         }
+        
     }
-
+    
     
     @ViewBuilder
     var back : some View{
@@ -95,63 +136,85 @@ struct PF_SheetView<Content> : View where Content : View{
 extension View{
     
     public func PF_Sheet<Content>(isPresented: Binding<Bool>, capsulebarColor : Color = .black,backcornerRadius:CGFloat = 32,backColor : Color, @ViewBuilder content:  @escaping () -> Content) -> some View where Content : View{
-
-        return
         
-        self.overlay(
-            Color.black.opacity(0.618).ignoresSafeArea()
-                        .onTapGesture {
-                            withAnimation(){
-                                madasoft()
-                                isPresented.wrappedValue = false
-                            }
-                        }
-                .ifshow(isPresented.wrappedValue,animation: .spring(), transition: .opacity)
-            
-            )
-            .overlay(        //抽屉
+        return self
+            .PF_FullScreen(isPresented: isPresented, backClear: true, onDismiss: {
+            }, content: {
                 PF_SheetView(isPresented: isPresented,capsulebarColor: capsulebarColor, backcornerRadius: backcornerRadius,backColor: backColor, content: content)
-                    .ifshow(isPresented.wrappedValue,  animation: .spring(), transition: .offset(x: 0, y: SH)
-                           )
-                
-                ,alignment: .bottom)
+            })
+    }
+    
+    public func PF_Sheet_SystemSheetStyle<Content>(isPresented: Binding<Bool>, capsulebarColor : Color = .black,backcornerRadius:CGFloat = 32,backColor : Color, @ViewBuilder content:  @escaping () -> Content) -> some View where Content : View{
+        
+        return self
+            .PF_SystemSheet(isPresented: isPresented, onDismiss: {
+            },backClear: true) {
+                PF_SheetView(isPresented: isPresented,capsulebarColor: capsulebarColor, backcornerRadius: backcornerRadius,backColor: backColor, isSheetStyle : true,content: content)
+            }
     }
 }
 
 
 struct PF_SheetViewExample: View {
-    @State private var show : Bool = false
+    @State private var PF_Sheet : Bool = false
+    @State private var PF_Sheet_SystemSheetStyle : Bool = false
     var body: some View {
         
         ZStack{
             NavigationView{
                 Color.yellow
                     .navigationTitle("The Big Blue")
+                    .navigationBarTitleDisplayMode(.large)
             }
-            Button {
-                withAnimation(){
-                        show = true
-                }
-            } label: {
-                Text("show Sheet")
-            }
-        }
-        .PF_Sheet(isPresented: $show, capsulebarColor: .black,backColor: .black) {
             VStack{
-                ForEach(0..<12){ index in
+                Button {
+                    //                withAnimation(){
+                    PF_Sheet = true
+                    //                }
+                } label: {
+                    Text("PF_Sheet")
+                }
+                
+                Button {
+                    //                withAnimation(){
+                    PF_Sheet_SystemSheetStyle = true
+                    //                }
+                } label: {
+                    Text("PF_Sheet_SystemSheetStyle")
+                }
+            }
+          
+        }
+        .PF_Sheet_SystemSheetStyle(isPresented: $PF_Sheet_SystemSheetStyle, capsulebarColor: .red, backcornerRadius: 24, backColor: .red,  content: {
+            VStack{
+                ForEach(0..<4){ index in
                     HStack{
                         Spacer()
                         ICON(sysname: "xmark", fcolor: .black, size: 12, fontWeight: .medium) {
-                            
                         }
                         Spacer()
                     }
                     .padding()
                 }
             }
-            .background(Color.red)
-            
-        }
+        })
+        
+                .PF_Sheet(isPresented: $PF_Sheet, capsulebarColor: .red,backcornerRadius: 32, backColor: .red) {
+                    VStack{
+                        ForEach(0..<4){ index in
+                            HStack{
+                                Spacer()
+                                ICON(sysname: "xmark", fcolor: .black, size: 12, fontWeight: .medium) {
+                                }
+                                Spacer()
+                            }
+                            .padding()
+                        }
+                    }
+        //            .background(Color.red)
+        
+        
+                }
         
     }
 }

@@ -50,12 +50,18 @@ extension SwiftUI.View {
     
     ///封装系统Sheet
     ///解决iOS14.4出现的单一响应问题：一个View多个Sheet只有最后一个响应
-     public func PF_SystemSheet<Content>(isPresented: Binding<Bool>, onDismiss: (()->Void)?,  content: @escaping () -> Content) -> some View where Content : View{
+    public func PF_SystemSheet<Content>(isPresented: Binding<Bool>, onDismiss: (()->Void)?, backClear: Bool = false, content: @escaping () -> Content) -> some View where Content : View{
          
         return GoBackground(Text("金诚所至，金石为开")
                         .opacity(0)
                         .sheet(isPresented: isPresented, onDismiss: onDismiss, content: {
-                            content()
+            if backClear {
+                content()
+                    .background(ClearFullScreenBackView())
+            }else{
+                content()
+            }
+                    
                         }))
     }
     
