@@ -8,27 +8,6 @@
 import SwiftUI
 
 
-struct ListRow : View{
-    let name : String
-    var note : String? = nil
-    let action : ()->()
-    
-    var body: some View{
-        VStack(alignment: .leading,spacing: 4){
-            Button(name){
-                withAnimation(.spring()){
-                    action()
-                }
-            }
-            if let note = note {
-                Text(note)
-                    .font(.system(size: 12, weight: .light, design: .rounded))
-                
-            }
-        }
-        .padding(.vertical,6)
-    }
-}
 struct ContentView: View {
     
     @State private var PF_Sheet : Bool = false
@@ -170,6 +149,7 @@ struct ContentView: View {
                     
                 }
             }
+            .navigationViewStyle(StackNavigationViewStyle())
         }
         .PF_Alert(text: "FantasyUI通知", color: .black, textcolor: .blue, show: $showAlert,  style: .cancel)
         
@@ -188,4 +168,27 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 
+
+
+struct ListRow : View{
+    let name : String
+    var note : String? = nil
+    let action : ()->()
+    
+    var body: some View{
+        VStack(alignment: .leading,spacing: 4){
+            Button(name){
+                withAnimation(.spring()){
+                    action()
+                }
+            }
+            if let note = note {
+                Text(note)
+                    .font(.system(size: 12, weight: .light, design: .rounded))
+                
+            }
+        }
+        .padding(.vertical,6)
+    }
+}
 

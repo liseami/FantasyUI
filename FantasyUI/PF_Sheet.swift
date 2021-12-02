@@ -53,10 +53,12 @@ struct PF_SheetView<Content> : View where Content : View{
                 }
             })
         
+        
         ZStack{
             if !isSheetStyle{
                 (showBackBlack ? Color.black  : Color.white)
                     .opacity(0.6)
+                    .gesture(gesture)
                     .ignoresSafeArea()
                     .onTapGesture {
                         madasoft()
@@ -125,11 +127,7 @@ struct PF_SheetView<Content> : View where Content : View{
         Capsule(style: .continuous)
             .frame(width: SW * 0.1, height: 4)
             .foregroundColor(capsulebarColor)
-            .offset(y:offset > 0 ? offset : 0)
-        
     }
-    
-    
 }
 
 
