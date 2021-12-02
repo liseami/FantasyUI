@@ -96,7 +96,9 @@ extension View{
     
     public func PF_Sheet<Content>(isPresented: Binding<Bool>, capsulebarColor : Color = .black,backcornerRadius:CGFloat = 32,backColor : Color, @ViewBuilder content:  @escaping () -> Content) -> some View where Content : View{
 
-        return  self.overlay(
+        return
+        
+        self.overlay(
             Color.black.opacity(0.618).ignoresSafeArea()
                         .onTapGesture {
                             withAnimation(){
@@ -139,7 +141,9 @@ struct PF_SheetViewExample: View {
                 ForEach(0..<12){ index in
                     HStack{
                         Spacer()
-                        Text("Hello,world")
+                        ICON(sysname: "xmark", fcolor: .black, size: 12, fontWeight: .medium) {
+                            
+                        }
                         Spacer()
                     }
                     .padding()
