@@ -16,7 +16,7 @@ public struct PF_OffsetScrollView<Body> : View  where Body : View{
     let content : ()-> Body
    
     public init(offset:Binding<CGFloat>, topPadding : Bool = true, content : @escaping ()-> Body) {
-        _offset = offset
+        _offset = offset 
         self.topPadding = topPadding
         self.content = content
     }
@@ -33,7 +33,6 @@ public struct PF_OffsetScrollView<Body> : View  where Body : View{
                     self.content()
                         .padding(.top,44 + TopSafeArea)
                 }
-                
                 Spacer().frame(width: 0, height: SW)
             }
             .ignoresSafeArea()
