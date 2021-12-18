@@ -61,7 +61,7 @@ Pod::Spec.new do |s|
   # spec.authors            = { "liseami" => "51239614+liseami@users.noreply.github.com" }
   s.social_media_url   = "https://twitter.com/liseami"
   s.source           = {
-    :git => 'https://github.com/liseami/FantasyUI.git'
+    :git => 'https://github.com/liseami/FantasyUI.git',
     # :tag => s.version.to_s,
     :submodules => true
   }
