@@ -94,41 +94,7 @@ Pod::Spec.new do |s|
   s.exclude_files = "FantasyUI/Exclude"
   s.public_header_files = "FantasyUI/**/*.h"
 
-  # 设置 podspec 的默认 subspec
-  s.default_subspecs = 'Extensions', 'Networking', 'Tools'
 
-    # 二级目录（根目录是s，使用s.subspec设置子目录，这里设置子目录为ss）
-  s.subspec 'Extensions' do |ss|
-    ss.source_files = 'FantasyUI/Extensions/**/*.swift'
-    # 框架包含的资源包
-    # ss.resources  = 'MotionComponents/MotionComponents/MotionComponents.bundle'
-    ss.dependency "SwifterSwift/SwiftStdlib"
-    ss.dependency "SwifterSwift/Foundation"
-    ss.dependency "SwifterSwift/Dispatch"
-  end
-  
-
-    # 网络请求 数据解析
-  s.subspec 'Networking' do |ss|
-    ss.source_files = 'FantasyUI/Networking/**/*.swift'
-
-#    ss.dependency "Moya"
-    ss.dependency "Moya/Combine", '~> 15.0'
-    ss.dependency "KakaJSON"
-    ss.dependency "SwiftyJSON"
-  end
-
-  s.subspec 'Tools' do |ss|
-    ss.source_files = 'FantasyUI/Tools/**/*.swift'
-#    ss.resources = 'MotionComponents/Tools/GitHubAuth/Auth.bundle'
-#    ss.resources = 'MotionComponents/Tools/GitHubAuth/GoogleService-Info.plist'
-
-    ss.dependency "FantasyUI/Extensions"
-    ss.dependency "ActiveLabel"
-    ss.dependency "GSPlayer"
-#    ss.dependency "Firebase/Auth"
-    ss.dependency "KeychainAccess"
-  end
 
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
