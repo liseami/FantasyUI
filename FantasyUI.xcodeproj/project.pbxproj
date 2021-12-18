@@ -73,6 +73,12 @@
 		5AF0B67E27491F280067C843 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AF0B67D27491F280067C843 /* Preview Assets.xcassets */; };
 		5AF0B68027491F280067C843 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF0B67F27491F280067C843 /* Persistence.swift */; };
 		5AF0B68327491F280067C843 /* Example.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5AF0B68127491F280067C843 /* Example.xcdatamodeld */; };
+		A286BCF3276DB14E008472B6 /* Extensions in Resources */ = {isa = PBXBuildFile; fileRef = A286BCF0276DB14D008472B6 /* Extensions */; };
+		A286BCF4276DB14E008472B6 /* Extensions in Resources */ = {isa = PBXBuildFile; fileRef = A286BCF0276DB14D008472B6 /* Extensions */; };
+		A286BCF5276DB14E008472B6 /* Tools in Resources */ = {isa = PBXBuildFile; fileRef = A286BCF1276DB14D008472B6 /* Tools */; };
+		A286BCF6276DB14E008472B6 /* Tools in Resources */ = {isa = PBXBuildFile; fileRef = A286BCF1276DB14D008472B6 /* Tools */; };
+		A286BCF7276DB14E008472B6 /* Networking in Resources */ = {isa = PBXBuildFile; fileRef = A286BCF2276DB14E008472B6 /* Networking */; };
+		A286BCF8276DB14E008472B6 /* Networking in Resources */ = {isa = PBXBuildFile; fileRef = A286BCF2276DB14E008472B6 /* Networking */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +132,9 @@
 		5AF0B67D27491F280067C843 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5AF0B67F27491F280067C843 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		5AF0B68227491F280067C843 /* Example.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Example.xcdatamodel; sourceTree = "<group>"; };
+		A286BCF0276DB14D008472B6 /* Extensions */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Extensions; path = FantasyUI/Extensions; sourceTree = "<group>"; };
+		A286BCF1276DB14D008472B6 /* Tools */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Tools; path = FantasyUI/Tools; sourceTree = "<group>"; };
+		A286BCF2276DB14E008472B6 /* Networking */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Networking; path = FantasyUI/Networking; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +166,9 @@
 		5A1D500C2747DF9600A2CCB9 = {
 			isa = PBXGroup;
 			children = (
+				A286BCF0276DB14D008472B6 /* Extensions */,
+				A286BCF2276DB14E008472B6 /* Networking */,
+				A286BCF1276DB14D008472B6 /* Tools */,
 				5A716FE5274CE733002241D3 /* ColorKit */,
 				5AA9C031274CDA1900D97A8E /* FantasyUI.podspec */,
 				5A1D50182747DF9600A2CCB9 /* FantasyUI */,
@@ -372,7 +384,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A286BCF3276DB14E008472B6 /* Extensions in Resources */,
 				5AA9C01A274CD9BC00D97A8E /* FantasyUI.md in Resources */,
+				A286BCF5276DB14E008472B6 /* Tools in Resources */,
+				A286BCF7276DB14E008472B6 /* Networking in Resources */,
 				5AA9C032274CDA1900D97A8E /* FantasyUI.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -388,9 +403,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A286BCF6276DB14E008472B6 /* Tools in Resources */,
+				A286BCF4276DB14E008472B6 /* Extensions in Resources */,
 				5AA9C01B274CD9BC00D97A8E /* FantasyUI.md in Resources */,
 				5AA9C033274CDA1900D97A8E /* FantasyUI.podspec in Resources */,
 				5AF0B67E27491F280067C843 /* Preview Assets.xcassets in Resources */,
+				A286BCF8276DB14E008472B6 /* Networking in Resources */,
 				5AF0B67B27491F280067C843 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

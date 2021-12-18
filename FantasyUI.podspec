@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "FantasyUI"
-  s.version      = "1.0.10"
+  s.version      = "1.0.11"
   s.summary      = "FantasyUI 金诚所至，金石为开.FantasyUI 金诚所至，金石为开.FantasyUI 金诚所至，金石为开.FantasyUI 金诚所至，金石为开.FantasyUI 金诚所至，金石为开."
 
 
@@ -60,6 +60,11 @@ Pod::Spec.new do |s|
   # Or just: spec.author    = "liseami"
   # spec.authors            = { "liseami" => "51239614+liseami@users.noreply.github.com" }
   s.social_media_url   = "https://twitter.com/liseami"
+  s.source           = {
+    :git => 'https://github.com/liseami/FantasyUI.git'
+    # :tag => s.version.to_s,
+    :submodules => true
+  }
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -74,13 +79,56 @@ Pod::Spec.new do |s|
   #  When using multiple platforms
   s.ios.deployment_target = "14.1"
   s.swift_version = '5.3'
+  s.frameworks = 'Combine', 'SwiftUI'
   # spec.osx.deployment_target = "10.7"
   # spec.watchos.deployment_target = "2.0"
   # spec.tvos.deployment_target = "9.0"
+  # 框架要求ARC环境下使用
   s.requires_arc = true
+  # 每次都参与编译方便修改时
   s.static_framework = true
 
 
+
+  s.source_files  = "*.swift","FantasyUI","FantasyUI/**/*.swift", "FantasyUI/**/*.{h,m}"
+  s.exclude_files = "FantasyUI/Exclude"
+  s.public_header_files = "FantasyUI/**/*.h"
+
+  # 设置 podspec 的默认 subspec
+  s.default_subspecs = 'Extensions', 'Networking', 'Tools'
+
+    # 二级目录（根目录是s，使用s.subspec设置子目录，这里设置子目录为ss）
+  s.subspec 'Extensions' do |ss|
+    ss.source_files = 'FantasyUI/Extensions/**/*.swift'
+    # 框架包含的资源包
+    # ss.resources  = 'MotionComponents/MotionComponents/MotionComponents.bundle'
+    ss.dependency "SwifterSwift/SwiftStdlib"
+    ss.dependency "SwifterSwift/Foundation"
+    ss.dependency "SwifterSwift/Dispatch"
+  end
+  
+
+    # 网络请求 数据解析
+  s.subspec 'Networking' do |ss|
+    ss.source_files = 'FantasyUI/Networking/**/*.swift'
+
+#    ss.dependency "Moya"
+    ss.dependency "Moya/Combine", '~> 15.0'
+    ss.dependency "KakaJSON"
+    ss.dependency "SwiftyJSON"
+  end
+
+  s.subspec 'Tools' do |ss|
+    ss.source_files = 'FantasyUI/Tools/**/*.swift'
+#    ss.resources = 'MotionComponents/Tools/GitHubAuth/Auth.bundle'
+#    ss.resources = 'MotionComponents/Tools/GitHubAuth/GoogleService-Info.plist'
+
+    ss.dependency "FantasyUI/Extensions"
+    ss.dependency "ActiveLabel"
+    ss.dependency "GSPlayer"
+#    ss.dependency "Firebase/Auth"
+    ss.dependency "KeychainAccess"
+  end
 
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -90,11 +138,7 @@ Pod::Spec.new do |s|
 
 
   # s.source = { :git => 'https://github.com/liseami/FantasyUI.git'}
-   s.source           = {
-    :git => 'https://github.com/liseami/FantasyUI.git'
-    # :tag => s.version.to_s,
-    # :submodules => true
-  }
+
 # s.source = { :git => 'https://github.com/liseami/FantasyUI.git', :tag => "#{s.version}" }
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -104,9 +148,6 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "*.swift","FantasyUI","FantasyUI/**/*.swift", "FantasyUI/**/*.{h,m}"
-  s.exclude_files = "FantasyUI/Exclude"
-  s.public_header_files = "FantasyUI/**/*.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
