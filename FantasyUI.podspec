@@ -96,6 +96,16 @@ Pod::Spec.new do |s|
 
 
 
+  # 网络请求 数据解析
+    s.subspec 'Networking' do |ss|
+    ss.source_files = 'FantasyUI/Networking/**/*.swift'
+
+    ss.dependency "Moya"
+    ss.dependency "Moya/Combine", '~> 15.0'
+    ss.dependency "KakaJSON"
+    ss.dependency "SwiftyJSON"
+  end
+
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
   #  Specify the location from where the source should be retrieved.
