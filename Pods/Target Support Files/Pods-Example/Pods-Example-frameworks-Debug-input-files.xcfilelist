@@ -1,5 +1,5 @@
 ${PODS_ROOT}/Target Support Files/Pods-Example/Pods-Example-frameworks.sh
-${BUILT_PRODUCTS_DIR}/Alamofire-iOS15.0/Alamofire.framework
-${BUILT_PRODUCTS_DIR}/KakaJSON-iOS15.0/KakaJSON.framework
-${BUILT_PRODUCTS_DIR}/Moya-iOS15.0/Moya.framework
-${BUILT_PRODUCTS_DIR}/SwiftyJSON-iOS15.0/SwiftyJSON.framework
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/KakaJSON/KakaJSON.framework
+${BUILT_PRODUCTS_DIR}/Moya/Moya.framework
+${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework

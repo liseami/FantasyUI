@@ -1,6 +1,8 @@
 PODS:
   - Alamofire (5.5.0)
   - KakaJSON (1.1.2)
+  - Moya (15.0.0):
+    - Moya/Core (= 15.0.0)
   - Moya/Combine (15.0.0):
     - Moya/Core
   - Moya/Core (15.0.0):
@@ -9,6 +11,7 @@ PODS:
 
 DEPENDENCIES:
   - KakaJSON
+  - Moya
   - Moya/Combine (~> 15.0)
   - SwiftyJSON
 
@@ -25,6 +28,6 @@ SPEC CHECKSUMS:
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: 2091f3d31d7da79f62f7adbcb4224dd854224001
+PODFILE CHECKSUM: 143b9ec43c735960b5c85b2c189c1f4e082306c0
 
 COCOAPODS: 1.11.2

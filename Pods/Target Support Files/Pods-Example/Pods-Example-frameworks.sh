@@ -176,16 +176,16 @@ code_sign_if_enabled() {
 }
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/Alamofire-iOS15.0/Alamofire.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/KakaJSON-iOS15.0/KakaJSON.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Moya-iOS15.0/Moya.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SwiftyJSON-iOS15.0/SwiftyJSON.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/KakaJSON/KakaJSON.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Moya/Moya.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/Alamofire-iOS15.0/Alamofire.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/KakaJSON-iOS15.0/KakaJSON.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Moya-iOS15.0/Moya.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SwiftyJSON-iOS15.0/SwiftyJSON.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/KakaJSON/KakaJSON.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Moya/Moya.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

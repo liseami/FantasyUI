@@ -220,5 +220,8 @@ struct PF_SheetViewExample: View {
 struct PF_SheetViewExample_Previews: PreviewProvider {
     static var previews: some View {
         PF_SheetViewExample()
+        PF_SheetView(isPresented: .constant(true), backColor: Color.red) {
+            Text("dhha")
+        }
     }
 }

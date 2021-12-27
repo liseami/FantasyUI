@@ -12,7 +12,7 @@ public let SW = UIScreen.main.bounds.width
 public let SH = UIScreen.main.bounds.height
 public let TopSafeArea = UIApplication.shared.windows.first?.safeAreaInsets.top ?? UIApplication.shared.statusBarFrame.size.height
 public let BottomSafeArea =  UIApplication.shared.windows.first?.safeAreaInsets.bottom ?? 0
-
+public let AppVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
 
 
 public enum Device {
