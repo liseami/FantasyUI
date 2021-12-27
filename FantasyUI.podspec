@@ -94,7 +94,7 @@ Pod::Spec.new do |s|
   s.exclude_files = "FantasyUI/Exclude"
   s.public_header_files = "FantasyUI/**/*.h"
   
-  s.dependency "SDWebImageSwiftUI"
+
 
 
   # 网络请求 数据解析
