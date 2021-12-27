@@ -7,6 +7,7 @@ target 'Example' do
     pod "KakaJSON"
     pod "SwiftyJSON"
     pod "Moya"
+
 end
 
 target 'FantasyUI' do
@@ -15,6 +16,7 @@ target 'FantasyUI' do
     pod "KakaJSON"
     pod "SwiftyJSON"
     pod "Moya"
+
 end
 
 post_install do |installer|
