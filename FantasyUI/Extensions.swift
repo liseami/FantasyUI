@@ -176,7 +176,7 @@ extension SKProduct {
 }
 
 
-extension Date
+public extension Date
 {
     func toString( dateFormat format  : String ) -> String
     {
