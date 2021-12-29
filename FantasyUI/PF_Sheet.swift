@@ -17,14 +17,14 @@ struct PF_SheetView<Content> : View where Content : View{
     @State private var bodyHeight : CGFloat = 0
     @State private var endoffset : CGFloat = 0
     @State private var showBackBlack : Bool = false
-    var capsulebarColor : Color = .black
     var backcornerRadius : CGFloat = 32
     var backColor : Color = .white
     var isSheetStyle : Bool = false
     
-    init(isPresented : Binding<Bool>,capsulebarColor : Color = .black , backcornerRadius : CGFloat = 32, backColor : Color,isSheetStyle : Bool = false, content:@escaping ()-> Content)
+    
+    init(isPresented : Binding<Bool>, backcornerRadius : CGFloat = 32, backColor : Color,isSheetStyle : Bool = false, content:@escaping ()-> Content)
     {
-        self.capsulebarColor = capsulebarColor
+        
         self.backcornerRadius = backcornerRadius
         self.backColor = backColor
         self.content = content
@@ -83,7 +83,7 @@ struct PF_SheetView<Content> : View where Content : View{
             {
                 Spacer()
                 Group {
-                    capsulebar
+                    
                     VStack(spacing:0){
                         content()
                             .background(backColor
@@ -122,12 +122,7 @@ struct PF_SheetView<Content> : View where Content : View{
         })
     }
     
-    var capsulebar : some View {
-        
-        Capsule(style: .continuous)
-            .frame(width: SW * 0.1, height: 4)
-            .foregroundColor(capsulebarColor)
-    }
+  
 }
 
 
@@ -138,7 +133,7 @@ extension View{
         return self
             .PF_FullScreen(isPresented: isPresented, backClear: true, onDismiss: {
             }, content: {
-                PF_SheetView(isPresented: isPresented,capsulebarColor: capsulebarColor, backcornerRadius: backcornerRadius,backColor: backColor, content: content)
+                PF_SheetView(isPresented: isPresented, backcornerRadius: backcornerRadius,backColor: backColor, content: content)
             })
     }
     
@@ -147,7 +142,7 @@ extension View{
         return self
             .PF_SystemSheet(isPresented: isPresented, onDismiss: {
             },backClear: true) {
-                PF_SheetView(isPresented: isPresented,capsulebarColor: capsulebarColor, backcornerRadius: backcornerRadius,backColor: backColor, isSheetStyle : true,content: content)
+                PF_SheetView(isPresented: isPresented,backcornerRadius: backcornerRadius,backColor: backColor, isSheetStyle : true,content: content)
             }
     }
 }
