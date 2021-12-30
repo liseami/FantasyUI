@@ -7,6 +7,7 @@ target 'Example' do
     pod "KakaJSON"
     pod "SwiftyJSON"
     pod "Moya"
+    pod "lottie-ios"
 
 end
 
@@ -16,6 +17,7 @@ target 'FantasyUI' do
     pod "KakaJSON"
     pod "SwiftyJSON"
     pod "Moya"
+    pod "lottie-ios"
 
 end
 

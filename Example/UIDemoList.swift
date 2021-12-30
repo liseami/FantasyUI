@@ -151,7 +151,7 @@ struct UIDemoList: View {
             .navigationViewStyle(StackNavigationViewStyle())
             
         }
-        .PF_Alert(text: "FantasyUI通知", color: .black, textcolor: .blue, show: $showAlert,  style: .cancel)
+        .PF_Alert(text: "FantasyUI通知", color: .black, textcolor: .blue, show: $showAlert,  style: .success)
         
         
         

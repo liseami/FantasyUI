@@ -75,6 +75,22 @@
 		5AF0B68027491F280067C843 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF0B67F27491F280067C843 /* Persistence.swift */; };
 		5AF0B68327491F280067C843 /* Example.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5AF0B68127491F280067C843 /* Example.xcdatamodeld */; };
 		68F76E6B644825EAB28A3679 /* Pods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32035D52609B7A51E449F426 /* Pods_Example.framework */; };
+		A2579C60277D4ACA00F941D7 /* PF_ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2579C5F277D4ACA00F941D7 /* PF_ProgressView.swift */; };
+		A2579C61277D4E6E00F941D7 /* PF_ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2579C5F277D4ACA00F941D7 /* PF_ProgressView.swift */; };
+		A2579C63277D5FA300F941D7 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2579C62277D5FA300F941D7 /* LottieView.swift */; };
+		A2579C64277D5FD600F941D7 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2579C62277D5FA300F941D7 /* LottieView.swift */; };
+		A2579C6C277D815200F941D7 /* lf30_editor_hiuhurtk.json in Resources */ = {isa = PBXBuildFile; fileRef = A2579C6B277D815200F941D7 /* lf30_editor_hiuhurtk.json */; };
+		A2579C6D277D815200F941D7 /* lf30_editor_hiuhurtk.json in Resources */ = {isa = PBXBuildFile; fileRef = A2579C6B277D815200F941D7 /* lf30_editor_hiuhurtk.json */; };
+		A2579C74277D8B8800F941D7 /* Curve.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2579C6F277D8B8800F941D7 /* Curve.swift */; };
+		A2579C75277D8B8800F941D7 /* Curve.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2579C6F277D8B8800F941D7 /* Curve.swift */; };
+		A2579C76277D8B8800F941D7 /* WaveShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2579C70277D8B8800F941D7 /* WaveShape.swift */; };
+		A2579C77277D8B8800F941D7 /* WaveShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2579C70277D8B8800F941D7 /* WaveShape.swift */; };
+		A2579C78277D8B8800F941D7 /* Wave.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2579C71277D8B8800F941D7 /* Wave.swift */; };
+		A2579C79277D8B8800F941D7 /* Wave.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2579C71277D8B8800F941D7 /* Wave.swift */; };
+		A2579C7A277D8B8800F941D7 /* WaveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2579C72277D8B8800F941D7 /* WaveData.swift */; };
+		A2579C7B277D8B8800F941D7 /* WaveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2579C72277D8B8800F941D7 /* WaveData.swift */; };
+		A2579C7C277D8B8800F941D7 /* WaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2579C73277D8B8800F941D7 /* WaveView.swift */; };
+		A2579C7D277D8B8800F941D7 /* WaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2579C73277D8B8800F941D7 /* WaveView.swift */; };
 		A286BD7F276DCD28008472B6 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A286BD7E276DCD28008472B6 /* Networking.swift */; };
 		A286BD80276DCD28008472B6 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A286BD7E276DCD28008472B6 /* Networking.swift */; };
 		A286BD85276DCD2F008472B6 /* Response+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A286BD81276DCD2F008472B6 /* Response+Extension.swift */; };
@@ -155,6 +171,14 @@
 		5AF0B67F27491F280067C843 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		5AF0B68227491F280067C843 /* Example.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Example.xcdatamodel; sourceTree = "<group>"; };
 		6B6479D2ADC1B979EE551735 /* Pods-FantasyUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FantasyUI.debug.xcconfig"; path = "Target Support Files/Pods-FantasyUI/Pods-FantasyUI.debug.xcconfig"; sourceTree = "<group>"; };
+		A2579C5F277D4ACA00F941D7 /* PF_ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PF_ProgressView.swift; sourceTree = "<group>"; };
+		A2579C62277D5FA300F941D7 /* LottieView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		A2579C6B277D815200F941D7 /* lf30_editor_hiuhurtk.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lf30_editor_hiuhurtk.json; sourceTree = "<group>"; };
+		A2579C6F277D8B8800F941D7 /* Curve.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Curve.swift; sourceTree = "<group>"; };
+		A2579C70277D8B8800F941D7 /* WaveShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveShape.swift; sourceTree = "<group>"; };
+		A2579C71277D8B8800F941D7 /* Wave.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wave.swift; sourceTree = "<group>"; };
+		A2579C72277D8B8800F941D7 /* WaveData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveData.swift; sourceTree = "<group>"; };
+		A2579C73277D8B8800F941D7 /* WaveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveView.swift; sourceTree = "<group>"; };
 		A286BD7E276DCD28008472B6 /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		A286BD81276DCD2F008472B6 /* Response+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Response+Extension.swift"; sourceTree = "<group>"; };
 		A286BD82276DCD2F008472B6 /* TargetType+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TargetType+Extension.swift"; sourceTree = "<group>"; };
@@ -238,10 +262,14 @@
 				5AA9C014274CD9BC00D97A8E /* PF_OffsetScrollView.swift */,
 				A2D3B425277748DB0007234C /* PF_LoadingManager.swift */,
 				5AA9C012274CD9BC00D97A8E /* PF_Sheet.swift */,
+				A2579C5F277D4ACA00F941D7 /* PF_ProgressView.swift */,
 				5AA9C017274CD9BC00D97A8E /* PublicStruct.swift */,
 				5AA9C013274CD9BC00D97A8E /* SystemTools.swift */,
 				5AA9C015274CD9BC00D97A8E /* ViewModifiers.swift */,
 				5AA9C00E274CD9BC00D97A8E /* ViewTools.swift */,
+				A2579C62277D5FA300F941D7 /* LottieView.swift */,
+				A2579C6E277D8B8800F941D7 /* Wave */,
+				A2579C6B277D815200F941D7 /* lf30_editor_hiuhurtk.json */,
 			);
 			path = FantasyUI;
 			sourceTree = "<group>";
@@ -331,6 +359,18 @@
 				A9DC68614D2F346F6C0FFB24 /* Pods-FantasyUI.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		A2579C6E277D8B8800F941D7 /* Wave */ = {
+			isa = PBXGroup;
+			children = (
+				A2579C6F277D8B8800F941D7 /* Curve.swift */,
+				A2579C70277D8B8800F941D7 /* WaveShape.swift */,
+				A2579C71277D8B8800F941D7 /* Wave.swift */,
+				A2579C72277D8B8800F941D7 /* WaveData.swift */,
+				A2579C73277D8B8800F941D7 /* WaveView.swift */,
+			);
+			path = Wave;
 			sourceTree = "<group>";
 		};
 		A286BD7B276DCCDE008472B6 /* Networking */ = {
@@ -485,6 +525,7 @@
 			files = (
 				5AA9C01A274CD9BC00D97A8E /* FantasyUI.md in Resources */,
 				5AA9C032274CDA1900D97A8E /* FantasyUI.podspec in Resources */,
+				A2579C6C277D815200F941D7 /* lf30_editor_hiuhurtk.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,6 +544,7 @@
 				5AA9C033274CDA1900D97A8E /* FantasyUI.podspec in Resources */,
 				5AF0B67E27491F280067C843 /* Preview Assets.xcassets in Resources */,
 				5AF0B67B27491F280067C843 /* Assets.xcassets in Resources */,
+				A2579C6D277D815200F941D7 /* lf30_editor_hiuhurtk.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -578,14 +620,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AA9C023274CD9BC00D97A8E /* PF_OffsetScrollView.swift in Sources */,
+				A2579C74277D8B8800F941D7 /* Curve.swift in Sources */,
+				A2579C63277D5FA300F941D7 /* LottieView.swift in Sources */,
 				5A716FFB274CE733002241D3 /* AverageColor.swift in Sources */,
 				A286BD95276DCD36008472B6 /* NetworkHeaderPlugin.swift in Sources */,
 				5A717014274CE733002241D3 /* RelativeLuminance.swift in Sources */,
+				A2579C76277D8B8800F941D7 /* WaveShape.swift in Sources */,
 				A286BD91276DCD36008472B6 /* AuthorizationHeaderPlugin.swift in Sources */,
 				A286BD7F276DCD28008472B6 /* Networking.swift in Sources */,
 				5A71701A274CE733002241D3 /* CMYK.swift in Sources */,
+				A2579C7C277D8B8800F941D7 /* WaveView.swift in Sources */,
 				5A71700E274CE733002241D3 /* ComplementaryColor.swift in Sources */,
 				5AA9C02C274CD9D700D97A8E /* Extensions.swift in Sources */,
+				A2579C7A277D8B8800F941D7 /* WaveData.swift in Sources */,
 				5A716FF9274CE733002241D3 /* Random.swift in Sources */,
 				5AA9C029274CD9BC00D97A8E /* PublicStruct.swift in Sources */,
 				5A717010274CE733002241D3 /* Hex.swift in Sources */,
@@ -608,6 +655,8 @@
 				A286BD97276DCD36008472B6 /* NetworkLoggerPlugin.swift in Sources */,
 				5A716FFF274CE733002241D3 /* RGB.swift in Sources */,
 				A286BD93276DCD36008472B6 /* ResponsePlugin.swift in Sources */,
+				A2579C78277D8B8800F941D7 /* Wave.swift in Sources */,
+				A2579C60277D4ACA00F941D7 /* PF_ProgressView.swift in Sources */,
 				5AA9C01F274CD9BC00D97A8E /* PF_Sheet.swift in Sources */,
 				A286BD89276DCD2F008472B6 /* MoyaProviderType+Extension.swift in Sources */,
 				5A717002274CE733002241D3 /* Lab.swift in Sources */,
@@ -631,8 +680,11 @@
 				5A51192C2755CA36004DC28D /* PublicStruct.swift in Sources */,
 				A286BD98276DCD36008472B6 /* NetworkLoggerPlugin.swift in Sources */,
 				5A717000274CE733002241D3 /* RGB.swift in Sources */,
+				A2579C61277D4E6E00F941D7 /* PF_ProgressView.swift in Sources */,
 				5AF0B68327491F280067C843 /* Example.xcdatamodeld in Sources */,
+				A2579C75277D8B8800F941D7 /* Curve.swift in Sources */,
 				A2D3B427277749AD0007234C /* PF_LoadingManager.swift in Sources */,
+				A2579C7D277D8B8800F941D7 /* WaveView.swift in Sources */,
 				5AF0B68027491F280067C843 /* Persistence.swift in Sources */,
 				5AF0B67927491F270067C843 /* UIDemoList.swift in Sources */,
 				A286BD8C276DCD2F008472B6 /* MoyaResult+Extension.swift in Sources */,
@@ -648,9 +700,11 @@
 				A286BD94276DCD36008472B6 /* ResponsePlugin.swift in Sources */,
 				A286BDA5276DDD69008472B6 /* MainView.swift in Sources */,
 				A286BD88276DCD2F008472B6 /* TargetType+Extension.swift in Sources */,
+				A2579C7B277D8B8800F941D7 /* WaveData.swift in Sources */,
 				5A717007274CE733002241D3 /* CGSizeExtensions.swift in Sources */,
 				A286BDA9276DDEB9008472B6 /* ApiCenter.swift in Sources */,
 				5A717005274CE733002241D3 /* CGFloatExtensions.swift in Sources */,
+				A2579C79277D8B8800F941D7 /* Wave.swift in Sources */,
 				5A717013274CE733002241D3 /* Difference.swift in Sources */,
 				5A71701B274CE733002241D3 /* CMYK.swift in Sources */,
 				5AA9C028274CD9BC00D97A8E /* CommonValues.swift in Sources */,
@@ -670,7 +724,9 @@
 				5A5119302755CA36004DC28D /* ViewTools.swift in Sources */,
 				A286BD96276DCD36008472B6 /* NetworkHeaderPlugin.swift in Sources */,
 				5A51192E2755CA36004DC28D /* PF_OffsetScrollView.swift in Sources */,
+				A2579C64277D5FD600F941D7 /* LottieView.swift in Sources */,
 				A286BD8A276DCD2F008472B6 /* MoyaProviderType+Extension.swift in Sources */,
+				A2579C77277D8B8800F941D7 /* WaveShape.swift in Sources */,
 				A286BD80276DCD28008472B6 /* Networking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -926,6 +982,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Example/Preview Content\"";
 				DEVELOPMENT_TEAM = 6UB6WM6VQR;
 				ENABLE_PREVIEWS = YES;
+				EXCLUDED_ARCHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -957,6 +1014,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Example/Preview Content\"";
 				DEVELOPMENT_TEAM = 6UB6WM6VQR;
 				ENABLE_PREVIEWS = YES;
+				EXCLUDED_ARCHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

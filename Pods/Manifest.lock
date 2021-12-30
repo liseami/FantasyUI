@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (5.5.0)
   - KakaJSON (1.1.2)
+  - lottie-ios (3.3.0)
   - Moya (15.0.0):
     - Moya/Core (= 15.0.0)
   - Moya/Combine (15.0.0):
@@ -11,6 +12,7 @@ PODS:
 
 DEPENDENCIES:
   - KakaJSON
+  - lottie-ios
   - Moya
   - Moya/Combine (~> 15.0)
   - SwiftyJSON
@@ -19,15 +21,17 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - KakaJSON
+    - lottie-ios
     - Moya
     - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
   KakaJSON: cc5ff50a8c1cfbb09413db8496cb709a209e6137
+  lottie-ios: 6ac74dcc09904798f59b18cb3075c089d76be9ae
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: 3663e646144c47ac7e954b29b4f2e19c284d5db5
+PODFILE CHECKSUM: 0df32cfcdd89fabe4822cbfcbc0c88cfb32b7e9e
 
 COCOAPODS: 1.11.2

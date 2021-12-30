@@ -95,7 +95,7 @@ Pod::Spec.new do |s|
   s.public_header_files = "FantasyUI/**/*.h"
   
 
-
+  s.dependency = "lottie-ios"
 
   # 网络请求 数据解析
     s.subspec 'Networking' do |ss|
@@ -105,6 +105,8 @@ Pod::Spec.new do |s|
     ss.dependency "Moya/Combine", '~> 15.0'
     ss.dependency "KakaJSON"
     ss.dependency "SwiftyJSON"
+
+
   end
 
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

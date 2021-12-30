@@ -44,12 +44,12 @@ struct PF_SheetView<Content> : View where Content : View{
                 if value.translation.height > (bodyHeight * 0.33){
                     madasoft()
                     showBackBlack = false
-                        endoffset = value.translation.height
-                        withAnimation(.spring()){
-                            isPresented = false
-                        }
-
-                 
+                    endoffset = value.translation.height
+                    withAnimation(.spring()){
+                        isPresented = false
+                    }
+                    
+                    
                 }
             })
         
@@ -122,7 +122,7 @@ struct PF_SheetView<Content> : View where Content : View{
         })
     }
     
-  
+    
 }
 
 
@@ -176,7 +176,7 @@ struct PF_SheetViewExample: View {
                     Text("PF_Sheet_SystemSheetStyle")
                 }
             }
-          
+            
         }
         .PF_Sheet_SystemSheetStyle(isPresented: $PF_Sheet_SystemSheetStyle, capsulebarColor: .red, backcornerRadius: 24, backColor: .red,  content: {
             VStack{
@@ -192,22 +192,23 @@ struct PF_SheetViewExample: View {
             }
         })
         
-                .PF_Sheet(isPresented: $PF_Sheet, capsulebarColor: .red,backcornerRadius: 32, backColor: .red) {
-                    VStack{
-                        ForEach(0..<4){ index in
-                            HStack{
-                                Spacer()
-                                ICON(sysname: "xmark", fcolor: .black, size: 12, fontWeight: .medium) {
-                                }
-                                Spacer()
-                            }
-                            .padding()
+        .PF_Sheet(isPresented: $PF_Sheet, capsulebarColor: .red,backcornerRadius: 32, backColor: .red) {
+            
+            VStack{
+                ForEach(0..<4){ index in
+                    HStack{
+                        Spacer()
+                        ICON(sysname: "xmark", fcolor: .black, size: 12, fontWeight: .medium) {
                         }
+                        Spacer()
                     }
-        //            .background(Color.red)
-        
-        
+                    .padding()
                 }
+            }
+            
+            
+            
+        }
         
     }
 }
