@@ -113,6 +113,8 @@
 		A286BDA5276DDD69008472B6 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A286BDA4276DDD69008472B6 /* MainView.swift */; };
 		A286BDA8276DDEB9008472B6 /* ApiTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A286BDA6276DDEB9008472B6 /* ApiTest.swift */; };
 		A286BDA9276DDEB9008472B6 /* ApiCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A286BDA7276DDEB9008472B6 /* ApiCenter.swift */; };
+		A2BB75742785910500C457D2 /* PublicFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BB75732785910500C457D2 /* PublicFunc.swift */; };
+		A2BB75752785910500C457D2 /* PublicFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BB75732785910500C457D2 /* PublicFunc.swift */; };
 		A2D3B426277748DB0007234C /* PF_LoadingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D3B425277748DB0007234C /* PF_LoadingManager.swift */; };
 		A2D3B427277749AD0007234C /* PF_LoadingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D3B425277748DB0007234C /* PF_LoadingManager.swift */; };
 /* End PBXBuildFile section */
@@ -192,6 +194,7 @@
 		A286BDA4276DDD69008472B6 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		A286BDA6276DDEB9008472B6 /* ApiTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiTest.swift; sourceTree = "<group>"; };
 		A286BDA7276DDEB9008472B6 /* ApiCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiCenter.swift; sourceTree = "<group>"; };
+		A2BB75732785910500C457D2 /* PublicFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicFunc.swift; sourceTree = "<group>"; };
 		A2D3B425277748DB0007234C /* PF_LoadingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PF_LoadingManager.swift; path = Networking/PF_LoadingManager.swift; sourceTree = "<group>"; };
 		A9DC68614D2F346F6C0FFB24 /* Pods-FantasyUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FantasyUI.release.xcconfig"; path = "Target Support Files/Pods-FantasyUI/Pods-FantasyUI.release.xcconfig"; sourceTree = "<group>"; };
 		E040559297E2105FA8A9F179 /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -270,6 +273,7 @@
 				A2579C62277D5FA300F941D7 /* LottieView.swift */,
 				A2579C6E277D8B8800F941D7 /* Wave */,
 				A2579C6B277D815200F941D7 /* lf30_editor_hiuhurtk.json */,
+				A2BB75732785910500C457D2 /* PublicFunc.swift */,
 			);
 			path = FantasyUI;
 			sourceTree = "<group>";
@@ -653,6 +657,7 @@
 				5AA9C025274CD9BC00D97A8E /* ViewModifiers.swift in Sources */,
 				5AA9C021274CD9BC00D97A8E /* SystemTools.swift in Sources */,
 				A286BD97276DCD36008472B6 /* NetworkLoggerPlugin.swift in Sources */,
+				A2BB75742785910500C457D2 /* PublicFunc.swift in Sources */,
 				5A716FFF274CE733002241D3 /* RGB.swift in Sources */,
 				A286BD93276DCD36008472B6 /* ResponsePlugin.swift in Sources */,
 				A2579C78277D8B8800F941D7 /* Wave.swift in Sources */,
@@ -707,6 +712,7 @@
 				A2579C79277D8B8800F941D7 /* Wave.swift in Sources */,
 				5A717013274CE733002241D3 /* Difference.swift in Sources */,
 				5A71701B274CE733002241D3 /* CMYK.swift in Sources */,
+				A2BB75752785910500C457D2 /* PublicFunc.swift in Sources */,
 				5AA9C028274CD9BC00D97A8E /* CommonValues.swift in Sources */,
 				5A717019274CE733002241D3 /* ContrastRatio.swift in Sources */,
 				5A71700F274CE733002241D3 /* ComplementaryColor.swift in Sources */,
