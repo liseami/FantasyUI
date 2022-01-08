@@ -220,3 +220,13 @@ public extension UIView {
 }
 
 
+public extension Double{
+    var toCurrencyString:String{
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.locale = Locale.current
+        let str =  formatter.string(from: NSNumber(value: self))!
+        return str
+    }
+}
+

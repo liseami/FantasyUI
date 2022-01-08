@@ -6,12 +6,16 @@
 //
 
 import SwiftUI
+import UIKit
 
 //可以测算offset的ScrollowView
 public struct PF_OffsetScrollView<Body> : View  where Body : View{
     
     
     @Binding var offset : CGFloat
+    @State private var can_refresh : Bool = false
+    @State private var refreshing : Bool = false
+    
     var topPadding : Bool = true
     let content : ()-> Body
    
@@ -26,29 +30,44 @@ public struct PF_OffsetScrollView<Body> : View  where Body : View{
     @ViewBuilder
     public var body: some View{
         
-        if topPadding {
-            ScrollView(.vertical, showsIndicators: false)  {
-                VStack(spacing:0){
-                    offsetDetector
-                    self.content()
-                        .padding(.top,44 + TopSafeArea)
+        Group{
+            if topPadding {
+                ScrollView(.vertical, showsIndicators: false)  {
+                    VStack(spacing:0){
+                        offsetDetector
+                        self.content()
+                            .padding(.top,44 + TopSafeArea)
+                    }
+                    Spacer().frame(width: 0, height: SW)
                 }
-                Spacer().frame(width: 0, height: SW)
+                .ignoresSafeArea()
             }
-            .ignoresSafeArea()
-        }
-        else
-        {
-            ScrollView(.vertical, showsIndicators: false)  {
-                VStack(spacing:0){
-                    offsetDetector
-                    self.content()
+            else
+            {
+                ScrollView(.vertical, showsIndicators: false)  {
+                    VStack(spacing:0){
+                        offsetDetector
+                        self.content()
+                    }
+                    
+                    Spacer().frame(width: 0, height: SW)
                 }
-                
-                Spacer().frame(width: 0, height: SW)
+                .ignoresSafeArea()
             }
-            .ignoresSafeArea()
         }
+        .onChange(of: offset) { newValue in
+        //向下拉动超过50，可以执行刷新
+            if offset > 50 && !can_refresh {
+                can_refresh = true
+            }
+         
+            guard offset >= 50 else {return}
+            
+            
+        }
+      
+        
+ 
         
         
     }
@@ -73,13 +92,31 @@ public struct PF_OffsetScrollView<Body> : View  where Body : View{
 }
 
 
-struct PF_OffsetScrollView_Previews: PreviewProvider {
-    static var previews: some View {
+
+struct PF_OffsetScrollView_Preview : View{
+    @State private var offset : CGFloat = 0
+    
+    var body: some View{
         
-        PF_OffsetScrollView(offset: .constant(32), content: {
-            ForEach(0 ..< 5) { item in
-                Text("23")
+        PF_OffsetScrollView(offset: $offset, content: {
+            VStack{
+                Text("\(offset)")
+                ForEach(0 ..< 5) { item in
+                    Color.gray
+                        .frame(width: SW, height: 44)
+                }
             }
+          
         })
+        
+        
+
+    }
+}
+struct PF_OffsetScrollView_Previews: PreviewProvider {
+    
+    
+    static var previews: some View {
+        PF_OffsetScrollView_Preview()
     }
 }
