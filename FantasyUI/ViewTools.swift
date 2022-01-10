@@ -99,6 +99,13 @@ extension View {
         self.modifier(Preview())
     }
     
+    //MARK: 阴影
+    public func PF_Shadow(color : Color = .black,style : PF_ShadowMod.Style = .s800) -> some View{
+            self.modifier(PF_ShadowMod(color: color, style: style))
+        }
+    
+    
+    
     
     //MARK: 根据设备不同采取不同的行动
     @ViewBuilder public func ifDeivceis<T>(_ condition: Bool, transform: (Self) -> T) -> some View where T: View {
@@ -117,12 +124,18 @@ extension View {
          }
      }
     
+    //MARK: 警报
     public func PF_Alert(text: String ,color : Color , textcolor : Color = .black , show : Binding<Bool> ,alignment : Alignment = .top ,style:PF_alert.AlertStyle = .cancel ) -> some View {
         self
             .overlay(
                 PF_alert(text: text, color: color, textcolor: textcolor, show: show, style : style),
                 alignment:alignment)
     }
+    
+    
+    
+  
+
     
 }
 

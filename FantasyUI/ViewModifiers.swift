@@ -74,3 +74,52 @@ struct Preview : ViewModifier{
         
     }
 }
+
+
+public struct PF_ShadowMod : ViewModifier{
+    
+    let color : Color
+    var style : Style = .s100
+    public enum Style {
+        case s100,s200,s300,s400,s500,s600,s700,s800
+        
+    }
+    public func body(content: Content) -> some View {
+        switch self.style{
+        case .s100 :
+            content
+                .shadow(color: color.opacity(0.12), radius: 4, x: 0, y: 2)
+                .shadow(color: color.opacity(0.08), radius: 4, x: 0, y: 4)
+        case .s200:
+            content
+                .shadow(color: color.opacity(0.12), radius: 6, x: 0, y: 4)
+                .shadow(color: color.opacity(0.08), radius: 8, x: 0, y: 8)
+        case .s300:
+            content
+                .shadow(color: color.opacity(0.12), radius: 8, x: 0, y: 6)
+                .shadow(color: color.opacity(0.08), radius: 16, x: 0, y: 8)
+        case .s400:
+            content
+                .shadow(color: color.opacity(0.12), radius: 12, x: 0, y: 6)
+                .shadow(color: color.opacity(0.08), radius: 24, x: 0, y: 8)
+        case .s500:
+            content
+                .shadow(color: color.opacity(0.12), radius: 14, x: 0, y: 6)
+                .shadow(color: color.opacity(0.08), radius: 32, x: 0, y: 10)
+        case .s600:
+            content
+                .shadow(color: color.opacity(0.12), radius: 18, x: 0, y: 8)
+                .shadow(color: color.opacity(0.08), radius: 42, x: 0, y: 12)
+        case .s700:
+            content
+                .shadow(color: color.opacity(0.12), radius: 22, x: 0, y: 8)
+                .shadow(color: color.opacity(0.08), radius: 64, x: 0, y: 14)
+        case .s800:
+            content
+                .shadow(color: color.opacity(0.12), radius: 22, x: 0, y: 8)
+                .shadow(color: color.opacity(0.08), radius: 88, x: 0, y: 18)
+        }
+       
+    }
+}
+
