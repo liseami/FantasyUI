@@ -11,11 +11,11 @@ import StoreKit
 import UIKit
 
 
-extension UIApplication {
+ extension UIApplication {
     //获取顶级试图
     //...
     //...
-    class func topViewController(controller: UIViewController? = UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController) -> UIViewController? {
+     class func topViewController(controller: UIViewController? = UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController) -> UIViewController? {
         if let navigationController = controller as? UINavigationController {
             return topViewController(controller: navigationController.visibleViewController)
         }
@@ -35,8 +35,8 @@ extension UIApplication {
 }
 
 
-extension UINavigationController {
-  open override func viewWillLayoutSubviews() {
+public extension UINavigationController {
+   override func viewWillLayoutSubviews() {
     navigationBar.topItem?.backButtonDisplayMode = .minimal
   }
 }
@@ -44,8 +44,8 @@ extension UINavigationController {
 
 
 //View转Uiimage
-extension View {
-   public func takeScreenshot(origin: CGPoint, size: CGSize) -> UIImage {
+public extension View {
+    func takeScreenshot(origin: CGPoint, size: CGSize) -> UIImage {
         let window = UIWindow(frame: CGRect(origin: origin, size: size))
         let hosting = UIHostingController(rootView: self)
         hosting.view.frame = window.frame
@@ -56,8 +56,8 @@ extension View {
 }
 
 //View转Uiimage
-extension UIView {
-    public var screenShot: UIImage {
+public extension UIView {
+     var screenShot: UIImage {
        let rect = self.bounds
        UIGraphicsBeginImageContextWithOptions(rect.size, false, 0.0)
        let context: CGContext = UIGraphicsGetCurrentContext()!
@@ -71,8 +71,8 @@ extension UIView {
 
 
 ///价格本地化
-extension SKProduct {
-    public  var localizedPrice: String {
+public extension SKProduct {
+      var localizedPrice: String {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
         formatter.locale = priceLocale
@@ -84,7 +84,7 @@ extension SKProduct {
     }
     
     
-    public  var HeightPriceString : String {
+      var HeightPriceString : String {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
         formatter.locale = priceLocale
@@ -100,8 +100,8 @@ extension SKProduct {
 
 
 //MARK: Hex颜色扩展
- extension Color {
-     public init(hex string: String) {
+public extension Color {
+      init(hex string: String) {
         var string: String = string.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         if string.hasPrefix("#") {
             _ = string.removeFirst()
