@@ -230,3 +230,14 @@ public extension Double{
     }
 }
 
+
+public extension String {
+    func toDate(dateFormat:String) -> Date{
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
+        dateFormatter.dateFormat = dateFormat
+        let date = dateFormatter.date(from:self) ?? Date()
+        return date
+    }
+}
+
