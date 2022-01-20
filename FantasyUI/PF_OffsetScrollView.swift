@@ -13,15 +13,28 @@ public struct PF_OffsetScrollView<Body> : View  where Body : View{
     
     
     @Binding var offset : CGFloat
-    @State private var can_refresh : Bool = false
-    @State private var refreshing : Bool = false
     
-    var topPadding : Bool = true
+    
+    @State private var min : CGFloat = 0
+    @State private var canrefresh : Bool = false
+    @State private var refreshing : Bool = false
+    @State private var showshift : Bool = false
+    @State private var showarrow : Bool = true
+    @State private var showErrorTextPlaceHolder : Bool = false
+    public  enum refreshResult{
+        case success
+        case error
+    }
+    
+    var refreshAction : (_ endrefresh : (_ result : refreshResult)->()) -> () = {endrefresh in }
+    
     let content : ()-> Body
-   
-    public init(offset:Binding<CGFloat>, topPadding : Bool = true, content : @escaping ()-> Body) {
-        _offset = offset 
-        self.topPadding = topPadding
+    
+    
+    
+    public init(offset:Binding<CGFloat>, refreshAction : @escaping (_ endrefresh : (_ result : refreshResult)->()) -> () = {endrefresh in } ,content : @escaping ()-> Body) {
+        _offset = offset
+        self.refreshAction = refreshAction
         self.content = content
     }
     
@@ -30,44 +43,47 @@ public struct PF_OffsetScrollView<Body> : View  where Body : View{
     @ViewBuilder
     public var body: some View{
         
-        Group{
-            if topPadding {
-                ScrollView(.vertical, showsIndicators: false)  {
-                    VStack(spacing:0){
-                        offsetDetector
-                        self.content()
-                            .padding(.top,44 + TopSafeArea)
-                    }
-                    Spacer().frame(width: 0, height: SW)
-                }
-                .ignoresSafeArea()
-            }
-            else
-            {
-                ScrollView(.vertical, showsIndicators: false)  {
-                    VStack(spacing:0){
-                        offsetDetector
-                        self.content()
-                    }
-                    
-                    Spacer().frame(width: 0, height: SW)
-                }
-                .ignoresSafeArea()
-            }
-        }
-        .onChange(of: offset) { newValue in
-        //向下拉动超过50，可以执行刷新
-            if offset > 50 && !can_refresh {
-                can_refresh = true
-            }
-         
-            guard offset >= 50 else {return}
-            
-            
-        }
-      
         
- 
+        ScrollView(.vertical, showsIndicators: true)  {
+            VStack(spacing:0){
+                offsetDetector
+                refreshArea
+                VStack(spacing:6){
+                    Text("现在无法刷新")
+                        .font(.system(size: 17, weight: .heavy, design: .monospaced))
+                        .foregroundColor(.black)
+                    Text("点击重试")
+                        .font(.system(size: 13, weight: .light, design: .monospaced))
+                        .foregroundColor(.gray)
+                }
+                .padding()
+                .onTapGesture {
+                    withAnimation(.spring()){
+                        showarrow = false
+                        refreshing = true
+                    }
+                    //测试延迟
+                    //                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    refreshAction { result in
+                        refreshResultHandle(result)
+                    }
+                    //                    }
+                }
+                .animation(.spring(), value: showErrorTextPlaceHolder)
+                .ifshow(showErrorTextPlaceHolder && !refreshing)
+                
+                .zIndex(2)
+                self.content()
+                    .zIndex(1)
+            }
+            Spacer().frame(width: 0, height: SW)
+        }
+        
+        
+        
+        
+        
+        
         
         
     }
@@ -79,15 +95,95 @@ public struct PF_OffsetScrollView<Body> : View  where Body : View{
             // Sticky Header...
             let minY = proxy.frame(in: .global).minY
             DispatchQueue.main.async {
-                self.offset = minY
+                self.offset = minY - min
             }
             return AnyView(
-                    Divider()
+                Spacer()
                     .opacity(0)
+                    .onAppear {
+                        let minY = proxy.frame(in: .global).minY
+                        self.min = minY
+                    }
             )
         }
         .frame(height: 0)
         .zIndex(1)
+    }
+    
+    
+    
+    var refreshArea : some View {
+        GeometryReader { geo in
+            //需要拉动的距离
+            let distance = min + 36
+            let minY = geo.frame(in: .global).minY
+            Rectangle()
+                .fill(Color.red)
+                .frame(height: refreshing ? 36 : (offset / 36) * 36 )
+                .overlay(
+                    
+                    ZStack{
+                        ICON(sysname: "arrow.down",fcolor: .black, size: 24)
+                            .offset( y: -12 + (offset / 36) * 12)
+                            .animation(.easeIn(duration: 0.2),value: canrefresh)
+                            .rotationEffect(Angle(degrees: canrefresh ? 180 : 0))
+                            .opacity(offset > 0 ? 1 : 0)
+                            .ifshow(showarrow)
+                        
+                        ProgressView()
+                            .ifshow(!showarrow)
+                            .ifshow(canrefresh || refreshing)
+                    }
+                    
+                )
+            
+        }
+        .frame(height: refreshing ? 36 : (offset / 36) * 36 )
+        /// 拉够36的距离，松手时可以刷新
+        .onChange(of: offset) { newValue in
+            guard !self.canrefresh else {return}
+            if offset > 36 {
+                withAnimation(.spring()){
+                    self.canrefresh = true
+                    madasoft()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                        showarrow = false
+                    }
+                }
+            }
+        }
+        //松手时执行刷新
+        .onChange(of: offset) { newValue in
+            if newValue < 36 && canrefresh && !refreshing {
+                withAnimation(.spring()){
+                    refreshing = true
+                }
+                refreshAction { result in
+                    refreshResultHandle(result)
+                }
+            }
+        }
+    }
+    
+    func refreshResultHandle(_ result : refreshResult){
+        switch result{
+        case .success :
+            //刷新动作结束时的回调函数
+            withAnimation(.spring()){
+                refreshing = false
+                canrefresh = false
+                showarrow = true
+                showErrorTextPlaceHolder = false
+            }
+        case .error :
+            //刷新动作结束时的回调函数
+            withAnimation(.spring()){
+                refreshing = false
+                canrefresh = false
+                showarrow = true
+                showErrorTextPlaceHolder = true
+            }
+        }
     }
 }
 
@@ -98,19 +194,28 @@ struct PF_OffsetScrollView_Preview : View{
     
     var body: some View{
         
-        PF_OffsetScrollView(offset: $offset, content: {
-            VStack{
-                Text("\(offset)")
-                ForEach(0 ..< 5) { item in
-                    Color.gray
-                        .frame(width: SW, height: 44)
-                }
+        PF_OffsetScrollView(offset: $offset) { endrefresh in
+            endrefresh(.success)
+        } content: {
+            VStack(spacing:0){
+                Color.gray
+                    .frame(height:SH)
+                    .overlay(
+                        VStack{
+                            Text("\(offset)")
+                            Text("CONTEN")
+                        }
+                    )
             }
-          
-        })
+        }
         
         
-
+        
+        
+        
+        
+        
+        
     }
 }
 struct PF_OffsetScrollView_Previews: PreviewProvider {
@@ -120,3 +225,5 @@ struct PF_OffsetScrollView_Previews: PreviewProvider {
         PF_OffsetScrollView_Preview()
     }
 }
+
+
