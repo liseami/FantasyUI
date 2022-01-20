@@ -30,13 +30,13 @@ public struct PF_OffsetScrollView<Body> : View  where Body : View{
         case error
     }
     
-    var refreshAction : (_ endrefresh : (_ result : refreshResult)->()) -> () = {endrefresh in }
+    var refreshAction : (_ endrefresh : @escaping (_ result : refreshResult)->()) -> () = {endrefresh in }
     
     let content : ()-> Body
     
     
     
-    public init(offset:Binding<CGFloat>, refreshAction : @escaping (_ endrefresh : (_ result : refreshResult)->()) -> () = {endrefresh in } ,content : @escaping ()-> Body) {
+    public init(offset:Binding<CGFloat>, refreshAction : @escaping (_ endrefresh : @escaping (_ result : refreshResult)->()) -> () = {endrefresh in } ,content : @escaping ()-> Body) {
         _offset = offset
         self.refreshAction = refreshAction
         self.content = content
