@@ -12,15 +12,19 @@ import UIKit
 public struct PF_OffsetScrollView<Body> : View  where Body : View{
     
     
-    @Binding var offset : CGFloat
-    
-    
+   
     @State private var min : CGFloat = 0
     @State private var canrefresh : Bool = false
     @State private var refreshing : Bool = false
     @State private var showshift : Bool = false
     @State private var showarrow : Bool = true
     @State private var showErrorTextPlaceHolder : Bool = false
+    @Binding var offset : CGFloat
+    
+    
+    
+    @State private var delay1sOver : Bool = false
+    
     public  enum refreshResult{
         case success
         case error
@@ -46,37 +50,45 @@ public struct PF_OffsetScrollView<Body> : View  where Body : View{
         
         ScrollView(.vertical, showsIndicators: true)  {
             VStack(spacing:0){
-                offsetDetector
-                refreshArea
-                VStack(spacing:6){
-                    Text("现在无法刷新")
-                        .font(.system(size: 17, weight: .heavy, design: .monospaced))
-                        .foregroundColor(.black)
-                    Text("点击重试")
-                        .font(.system(size: 13, weight: .light, design: .monospaced))
-                        .foregroundColor(.gray)
-                }
-                .padding()
-                .onTapGesture {
-                    withAnimation(.spring()){
-                        showarrow = false
-                        refreshing = true
+                //延迟1.2秒再进入视图
+                if delay1sOver {
+                    offsetDetector
+                    refreshArea
+                    VStack(spacing:6){
+                        Text("现在无法刷新")
+                            .font(.system(size: 17, weight: .heavy, design: .monospaced))
+                            .foregroundColor(.black)
+                        Text("点击重试")
+                            .font(.system(size: 13, weight: .light, design: .monospaced))
+                            .foregroundColor(.gray)
                     }
-                    //测试延迟
-                    //                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    refreshAction { result in
-                        refreshResultHandle(result)
+                    .padding()
+                    .onTapGesture {
+                        withAnimation(.spring()){
+                            showarrow = false
+                            refreshing = true
+                        }
+                        //测试延迟
+                        //                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        refreshAction { result in
+                            refreshResultHandle(result)
+                        }
+                        //                    }
                     }
-                    //                    }
+                    .animation(.spring(), value: showErrorTextPlaceHolder)
+                    .ifshow(showErrorTextPlaceHolder && !refreshing)
+                    .zIndex(2)
                 }
-                .animation(.spring(), value: showErrorTextPlaceHolder)
-                .ifshow(showErrorTextPlaceHolder && !refreshing)
-                
-                .zIndex(2)
+              
                 self.content()
                     .zIndex(1)
             }
             Spacer().frame(width: 0, height: SW)
+        }
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
+                delay1sOver = true
+            }
         }
         
         
@@ -118,7 +130,7 @@ public struct PF_OffsetScrollView<Body> : View  where Body : View{
             let distance = min + 36
             let minY = geo.frame(in: .global).minY
             Rectangle()
-                .fill(Color.red)
+                .fill(Color.clear)
                 .frame(height: refreshing ? 36 : (offset / 36) * 36 )
                 .overlay(
                     
