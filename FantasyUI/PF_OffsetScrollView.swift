@@ -49,11 +49,11 @@ public struct PF_OffsetScrollView<Body> : View  where Body : View{
         
         ScrollView(.vertical, showsIndicators: false)  {
             VStack(spacing:0){
-          
+                offsetDetector
                 //延迟1.2秒再进入视图，下拉时才出现，上滑时隐藏
                 if delay1sOver && refreshingenable {
                     
-                    offsetDetector
+             
                     refreshArea
                         .ifshow(offset >= 0)
                     
@@ -89,18 +89,10 @@ public struct PF_OffsetScrollView<Body> : View  where Body : View{
             Spacer().frame(width: 0, height: SW)
         }
         .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                 delay1sOver = true
             }
         }
-        
-        
-        
-        
-        
-        
-        
-        
         
     }
     
@@ -117,8 +109,10 @@ public struct PF_OffsetScrollView<Body> : View  where Body : View{
                 Spacer()
                     .opacity(0)
                     .onAppear {
-                        let minY = proxy.frame(in: .global).minY
-                        self.min = minY
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                            let minY = proxy.frame(in: .global).minY
+                            self.min = minY
+                        }
                     }
             )
         }
