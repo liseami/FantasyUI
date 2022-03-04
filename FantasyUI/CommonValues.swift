@@ -8,6 +8,7 @@
 import UIKit
 import SwiftUI
 
+public let GoldenH: CGFloat = SH * 0.618 * 0.618 * 0.618 * 0.618 * 0.618 * 0.618
 public let SW = UIScreen.main.bounds.width
 public let SH = UIScreen.main.bounds.height
 public let TopSafeArea = UIApplication.shared.windows.first?.safeAreaInsets.top ?? UIApplication.shared.statusBarFrame.size.height
