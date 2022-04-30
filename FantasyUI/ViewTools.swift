@@ -41,12 +41,6 @@ public extension View {
         return result
     }
 
-    // MARK: 动画防抖
-
-    func PF_Animation(_ animation: Animation? = .default) -> some View {
-        modifier(PF_AnimationModifier(animationed: animation))
-    }
-
     // MARK: 内阴影
 
     func innerShadow<S: Shape>(using shape: S, angle: Angle = .degrees(0), color: Color = .black, width: CGFloat = 6, blur: CGFloat = 6) -> some View {

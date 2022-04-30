@@ -7,23 +7,7 @@
 
 import SwiftUI
 
-// 动画防抖
-struct PF_AnimationModifier: ViewModifier {
-    let animationed: Animation?
-    @State private var canAnimation = false
-    func body(content: Content) -> some View {
-        content
-            .animation(canAnimation ? animationed : nil)
-            .onAppear {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                    canAnimation = true
-                }
-            }
-    }
-}
-
 // MARK: 调整按钮位置至屏幕角落
-
 public struct PF_MovotoModifier: ViewModifier {
     public enum edge {
         case centerLeading
