@@ -27,7 +27,7 @@ struct PF_NavigationView_Previews: PreviewProvider {
 public extension View {
     func PF_OverProgressView(loadingState: PF_LoadingState = .fullScreen) -> some View {
         let block = BlurView()
-            .frame(width: SW / 2.5, height: SW / 2.5)
+            .frame(width: SCREEN_WIDTH / 2.5, height: SCREEN_WIDTH / 2.5)
             .clipShape(RoundedRectangle(cornerRadius: 24, style: .continuous))
         return overlay(
             Group {

@@ -78,7 +78,7 @@ public struct PF_OffsetScrollView<Body>: View where Body: View {
                 self.content()
                     .zIndex(1)
             }
-            Spacer().frame(width: 0, height: SW)
+            Spacer().frame(width: 0, height: SCREEN_WIDTH)
         }
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {

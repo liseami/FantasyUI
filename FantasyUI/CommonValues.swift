@@ -8,8 +8,9 @@
 import SwiftUI
 import UIKit
 
-public let SW = UIScreen.main.bounds.width
+public let SCREEN_WIDTH = UIScreen.main.bounds.width
 public let SH = UIScreen.main.bounds.height
+public let TABBAR_HEIGHT = (SCREEN_WIDTH / 375) * 46
 public let AppVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
 public let AppBuild = Bundle.main.infoDictionary?["CFBundleVersion"] as? String
 

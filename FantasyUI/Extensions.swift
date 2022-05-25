@@ -99,22 +99,6 @@ public extension Date {
     }
 }
 
-public extension View {
-    // This function changes our View to UIView, then calls another function
-    // to convert the newly-made UIView to a UIImage.
-    func asUIImage() -> UIImage {
-        let controller = UIHostingController(rootView: self)
-        controller.view.frame = CGRect(x: 0, y: CGFloat(Int.max), width: 1, height: 1)
-        UIApplication.shared.windows.first!.rootViewController?.view.addSubview(controller.view)
-        let size = controller.sizeThatFits(in: UIScreen.main.bounds.size)
-        controller.view.bounds = CGRect(origin: .zero, size: size)
-        controller.view.sizeToFit()
-        // here is the call to the function that converts UIView to UIImage: `.asUIImage()`
-        let image = controller.view.asUIImage()
-        controller.view.removeFromSuperview()
-        return image
-    }
-}
 
 public extension View {
     func snapshot() -> UIImage {
@@ -162,21 +146,20 @@ public extension String {
 }
 
 
-/// Takes the screenshot of the screen and returns the corresponding image
- ///
- /// - Parameter shouldSave: Boolean flag asking if the image needs to be saved to user's photo library. Default set to 'true'
- /// - Returns: (Optional)image captured as a screenshot
- public  func takeScreenshot(_ shouldSave: Bool = true) async ->  UIImage? {
-     var screenshotImage :UIImage?
-     let layer = await UIApplication.shared.keyWindow!.layer
-     let scale = await  UIScreen.main.scale
-     UIGraphicsBeginImageContextWithOptions(layer.frame.size, false, scale);
-     guard let context = UIGraphicsGetCurrentContext() else {return nil}
-     layer.render(in:context)
-     screenshotImage = UIGraphicsGetImageFromCurrentImageContext()
-     UIGraphicsEndImageContext()
-     if let image = screenshotImage, shouldSave {
-         UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-     }
-     return screenshotImage
- }
+public extension View {
+    func asUiImage() -> UIImage {
+        var uiImage = UIImage(systemName: "exclamationmark.triangle.fill")!
+        let controller = UIHostingController(rootView: self)
+        if let view = controller.view {
+            let contentSize = view.intrinsicContentSize
+            view.bounds = CGRect(origin: .zero, size: contentSize)
+            view.backgroundColor = .clear
+
+            let renderer = UIGraphicsImageRenderer(size: contentSize)
+            uiImage = renderer.image { _ in
+                view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
+            }
+        }
+        return uiImage
+    }
+}

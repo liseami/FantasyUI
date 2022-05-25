@@ -14,21 +14,13 @@ import SwiftyJSON
 public typealias MoyaResult = Result<Moya.Response, MoyaError>
 
 public enum StatusCode: Int {
-    case unknow = -10
-    /// 解析错误
-//    case parsingError = -9
-//    /// 请求错误
-//    case requestError = -8
-//    /// 无响应
-//    case noResponse = -1
-//
-    case notConnectedToInternet = -1009
     case success = 200
-
+    case unknow = -10
+    case notConnectedToInternet = -1009
     case nopermission = 401
+    case notfond = 404
     case tokenexpired = 4001
     case refreshtokenexpired = 4002
-
     case other
 }
 
@@ -43,7 +35,7 @@ public struct NetworkResponse<T: Convertible> {
 // Result<Moya.Response, MoyaError>
 public extension Result where Success == Moya.Response {
     var rawReponse: Moya.Response? { // 原始的 Response
-        return try? get()
+        try? get()
     }
 
     var json: JSON? { // 原始Response 转data
@@ -56,26 +48,26 @@ public extension Result where Success == Moya.Response {
     // MARK: - 自定义的
 
     var code: StatusCode {
-        return .init(rawValue: json?["code"].intValue ?? -10) ?? .unknow
+        .init(rawValue: json?["code"].intValue ?? -10) ?? .unknow
     }
 
     var message: String {
-        return json?["msg"].string ?? errorDesc
+        json?["msg"].string ?? errorDesc
     }
 
     // 有个字段叫 data
     var rawData: Any? {
-        return json?["data"].rawValue
+        json?["data"].rawValue
     }
 
     var dataJson: JSON? {
-        return json?["data"]
+        json?["data"]
     }
 
     // MARK: - 其他
 
     var isSuccess: Bool {
-        return code == .success
+        code == .success
     }
 
     var errorDesc: String {
